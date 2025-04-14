@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Network, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Github } from "lucide-react"
+import Image from "next/image"
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Github } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -8,7 +9,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <Network className="h-6 w-6 text-[#27c6d9]" />
+              <Image
+                src="/logo.png"
+                alt="Arsalan Academy Logo"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full"
+              />
               <span className="text-xl font-bold">Arsalan Academy</span>
             </Link>
             <p className="text-gray-400 mb-4">Professional network automation solutions for modern enterprises.</p>

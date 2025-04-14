@@ -15,8 +15,7 @@ export default function Home() {
                 Arsalan <span className="text-[#27c6d9]">Academy</span> for Network Automation
               </h1>
               <p className="max-w-[600px] text-gray-300 md:text-xl">
-                Streamline your network operations with our cutting-edge automation services. Reduce errors, save time,
-                and optimize performance.
+                We empower engineers and companies with the skills to build, deploy, and maintain automated network infrastructure.
               </p>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Button asChild className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
@@ -47,7 +46,7 @@ export default function Home() {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Services</h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                We provide comprehensive network automation solutions to help your business thrive in the digital age.
+                We provide comprehensive network automation training and solutions to help your business thrive in the digital age.
               </p>
             </div>
           </div>
@@ -56,27 +55,27 @@ export default function Home() {
               <div className="p-3 rounded-full bg-[#27c6d9]/10">
                 <Server className="h-10 w-10 text-[#27c6d9]" />
               </div>
-              <h3 className="text-xl font-bold">Infrastructure Automation</h3>
+              <h3 className="text-xl font-bold">Technical Training</h3>
               <p className="text-gray-500 text-center">
-                Automate your network infrastructure deployment and management for increased efficiency.
+                Technical training to help your team build, deploy, and maintain automated network infrastructure.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 border border-gray-200 p-6 rounded-lg hover:shadow-lg transition-shadow">
               <div className="p-3 rounded-full bg-[#27c6d9]/10">
                 <Network className="h-10 w-10 text-[#27c6d9]" />
               </div>
-              <h3 className="text-xl font-bold">Network Orchestration</h3>
+              <h3 className="text-xl font-bold">Product Training</h3>
               <p className="text-gray-500 text-center">
-                Streamline complex network operations with our advanced orchestration solutions.
+                Product training to help your users and community get the most out of your products.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 border border-gray-200 p-6 rounded-lg hover:shadow-lg transition-shadow">
               <div className="p-3 rounded-full bg-[#27c6d9]/10">
                 <Shield className="h-10 w-10 text-[#27c6d9]" />
               </div>
-              <h3 className="text-xl font-bold">Security Automation</h3>
+              <h3 className="text-xl font-bold">Solution Development</h3>
               <p className="text-gray-500 text-center">
-                Enhance your network security with automated threat detection and response.
+                Solution development to help your internal teams and engineers maximize work efficiency.
               </p>
             </div>
           </div>

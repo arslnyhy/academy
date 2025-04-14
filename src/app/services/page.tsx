@@ -27,15 +27,14 @@ export default function ServicesPage() {
         <div className="container px-4 md:px-6">
           <div className="grid gap-12">
             {/* Service 1 */}
-            <div id="infrastructure" className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+            <div id="technical-training" className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center space-x-2">
                   <Server className="h-6 w-6 text-[#27c6d9]" />
-                  <h2 className="text-3xl font-bold tracking-tighter">Infrastructure Automation</h2>
+                  <h2 className="text-3xl font-bold tracking-tighter">Technical Training</h2>
                 </div>
                 <p className="text-gray-500">
-                  Automate the deployment, configuration, and management of your network infrastructure to reduce manual
-                  errors and increase operational efficiency.
+                  Technical training to help your team build, deploy, and maintain automated network infrastructure.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start space-x-2">
@@ -72,7 +71,7 @@ export default function ServicesPage() {
               <div className="flex justify-center">
                 <Image
                   src="/placeholder.svg?height=400&width=600"
-                  alt="Infrastructure Automation"
+                  alt="Technical Training"
                   width={600}
                   height={400}
                   className="rounded-lg object-cover"
@@ -81,11 +80,11 @@ export default function ServicesPage() {
             </div>
 
             {/* Service 2 */}
-            <div id="orchestration" className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+            <div id="product-training" className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="flex justify-center lg:order-last">
                 <Image
                   src="/placeholder.svg?height=400&width=600"
-                  alt="Network Orchestration"
+                  alt="Product Training"
                   width={600}
                   height={400}
                   className="rounded-lg object-cover"
@@ -94,36 +93,29 @@ export default function ServicesPage() {
               <div className="space-y-4">
                 <div className="inline-flex items-center space-x-2">
                   <Network className="h-6 w-6 text-[#27c6d9]" />
-                  <h2 className="text-3xl font-bold tracking-tighter">Network Orchestration</h2>
+                  <h2 className="text-3xl font-bold tracking-tighter">Product Training</h2>
                 </div>
                 <p className="text-gray-500">
-                  Streamline complex network operations with our advanced orchestration solutions that coordinate
-                  multiple automation tasks across your network.
+                  Develop comprehensive training courses and educational content to help your users and customers master your products effectively.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start space-x-2">
                     <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
-                    <span>End-to-end service orchestration</span>
+                    <span>Custom course development and curriculum design</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
-                    <span>Multi-vendor network management</span>
+                    <span>Interactive learning materials and documentation</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
-                    <span>Workflow automation and scheduling</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
-                      <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
-                    </div>
-                    <span>Intent-based networking implementation</span>
+                    <span>User onboarding and certification programs</span>
                   </li>
                 </ul>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row pt-4">
@@ -135,15 +127,14 @@ export default function ServicesPage() {
             </div>
 
             {/* Service 3 */}
-            <div id="security" className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+            <div id="solution-development" className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center space-x-2">
                   <Shield className="h-6 w-6 text-[#27c6d9]" />
-                  <h2 className="text-3xl font-bold tracking-tighter">Security Automation</h2>
+                  <h2 className="text-3xl font-bold tracking-tighter">Solution Development</h2>
                 </div>
                 <p className="text-gray-500">
-                  Enhance your network security with automated threat detection, response, and compliance monitoring
-                  solutions.
+                  Solution development to help your internal teams and engineers maximize work efficiency.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start space-x-2">
@@ -164,12 +155,6 @@ export default function ServicesPage() {
                     </div>
                     <span>Compliance monitoring and reporting</span>
                   </li>
-                  <li className="flex items-start space-x-2">
-                    <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
-                      <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
-                    </div>
-                    <span>Security incident response automation</span>
-                  </li>
                 </ul>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row pt-4">
                   <Button className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
@@ -180,7 +165,7 @@ export default function ServicesPage() {
               <div className="flex justify-center">
                 <Image
                   src="/placeholder.svg?height=400&width=600"
-                  alt="Security Automation"
+                  alt="Solution Development"
                   width={600}
                   height={400}
                   className="rounded-lg object-cover"
@@ -227,12 +212,6 @@ export default function ServicesPage() {
                     </div>
                     <span>Technology selection and implementation planning</span>
                   </li>
-                  <li className="flex items-start space-x-2">
-                    <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
-                      <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
-                    </div>
-                    <span>ROI analysis and business case development</span>
-                  </li>
                 </ul>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row pt-4">
                   <Button className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
@@ -250,8 +229,7 @@ export default function ServicesPage() {
                   <h2 className="text-3xl font-bold tracking-tighter">Training & Workshops</h2>
                 </div>
                 <p className="text-gray-500">
-                  Empower your team with the knowledge and skills they need to implement and maintain network automation
-                  solutions.
+                  Empower your team with knowledge and skills needed for network automation.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start space-x-2">
@@ -271,12 +249,6 @@ export default function ServicesPage() {
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
                     <span>Certification preparation</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
-                      <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
-                    </div>
-                    <span>Knowledge transfer and documentation</span>
                   </li>
                 </ul>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row pt-4">
@@ -302,26 +274,17 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tighter">Ready to Transform Your Network Operations?</h2>
-              <p className="text-gray-300">
-                Contact us today to discuss how our network automation solutions can benefit your business.
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Ready to Get Started?</h2>
+              <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Contact us today to discuss how our services can help transform your network operations.
               </p>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
-                  <Link href="/contact">Contact Us</Link>
-                </Button>
-              </div>
             </div>
-            <div className="flex justify-center">
-              <Image
-                src="/placeholder.svg?height=300&width=500"
-                alt="Contact Us"
-                width={500}
-                height={300}
-                className="rounded-lg object-cover"
-              />
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Button asChild className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
+                <Link href="/contact">Contact Us</Link>
+              </Button>
             </div>
           </div>
         </div>

@@ -1,39 +1,23 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import { useForm, ValidationError } from '@formspree/react';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin } from "lucide-react"
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    message: "",
-  })
+  const [state, handleSubmit] = useForm("mvgkygor");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // In a real application, you would handle form submission here
-    console.log("Form submitted:", formData)
-    alert("Thank you for your message! We'll get back to you soon.")
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: "",
-    })
+  if (state.succeeded) {
+    return (
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-md mx-auto text-center">
+          <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
+          <p className="text-gray-600">Your message has been sent successfully. We'll get back to you soon.</p>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -88,93 +72,52 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="space-y-4">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="name"
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      Name
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="John Smith"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="email"
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      Email
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="john@example.com"
-                      required
-                    />
-                  </div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address
+                  </label>
+                  <Input
+                    id="email"
+                    type="email" 
+                    name="email"
+                    placeholder="your@email.com"
+                    required
+                    className="w-full"
+                  />
+                  <ValidationError 
+                    prefix="Email" 
+                    field="email"
+                    errors={state.errors}
+                    className="mt-1 text-sm text-red-600"
+                  />
                 </div>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="phone"
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      Phone
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+1 (555) 123-4567"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="company"
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      Company
-                    </label>
-                    <Input
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      placeholder="Your Company"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label
-                    htmlFor="message"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     Message
                   </label>
                   <Textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us about your network automation needs..."
-                    className="min-h-[150px]"
+                    placeholder="How can we help you?"
                     required
+                    className="w-full min-h-[150px]"
+                  />
+                  <ValidationError 
+                    prefix="Message" 
+                    field="message"
+                    errors={state.errors}
+                    className="mt-1 text-sm text-red-600"
                   />
                 </div>
-                <Button type="submit" className="w-full bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
-                  Send Message
+
+                <Button
+                  type="submit"
+                  disabled={state.submitting}
+                  className="w-full bg-[#27c6d9] hover:bg-[#1ea8b9] text-black"
+                >
+                  {state.submitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </div>
