@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Users, Award, Clock, BookOpen } from "lucide-react"
+import { Users } from "lucide-react"
 
 export default function AboutPage() {
   return (
@@ -54,60 +54,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter">Our Values</h2>
-              <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                These core principles guide everything we do at NetAutomate.
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            <div className="flex flex-col items-center space-y-2 p-6 rounded-lg hover:shadow-lg transition-shadow">
-              <div className="p-3 rounded-full bg-[#27c6d9]/10">
-                <Award className="h-10 w-10 text-[#27c6d9]" />
-              </div>
-              <h3 className="text-xl font-bold">Excellence</h3>
-              <p className="text-gray-500 text-center">
-                We strive for excellence in everything we do, from the solutions we develop to the service we provide.
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-2 p-6 rounded-lg hover:shadow-lg transition-shadow">
-              <div className="p-3 rounded-full bg-[#27c6d9]/10">
-                <Users className="h-10 w-10 text-[#27c6d9]" />
-              </div>
-              <h3 className="text-xl font-bold">Collaboration</h3>
-              <p className="text-gray-500 text-center">
-                We believe in the power of collaboration, both within our team and with our clients.
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-2 p-6 rounded-lg hover:shadow-lg transition-shadow">
-              <div className="p-3 rounded-full bg-[#27c6d9]/10">
-                <BookOpen className="h-10 w-10 text-[#27c6d9]" />
-              </div>
-              <h3 className="text-xl font-bold">Innovation</h3>
-              <p className="text-gray-500 text-center">
-                We continuously explore new technologies and approaches to deliver innovative solutions.
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-2 p-6 rounded-lg hover:shadow-lg transition-shadow">
-              <div className="p-3 rounded-full bg-[#27c6d9]/10">
-                <Clock className="h-10 w-10 text-[#27c6d9]" />
-              </div>
-              <h3 className="text-xl font-bold">Reliability</h3>
-              <p className="text-gray-500 text-center">
-                We deliver on our promises and ensure our solutions are reliable and dependable.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Team */}
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      {/* Our Team Section Template (preserved for future use) */}
+      {/* <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -172,7 +120,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

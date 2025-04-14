@@ -1,6 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Github } from "lucide-react"
+import { Mail, Slack, Twitter, Linkedin, Github } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 
 export default function Footer() {
   return (
@@ -18,11 +20,11 @@ export default function Footer() {
               />
               <span className="text-xl font-bold">Arsalan Academy</span>
             </Link>
-            <p className="text-gray-400 mb-4">Professional network automation solutions for modern enterprises.</p>
+            <p className="text-gray-400 mb-4">Professional network automation services for enterprises and teams.</p>
             <div className="flex space-x-4">
               <Link href="#" className="text-gray-400 hover:text-[#27c6d9]">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
+                <Slack className="h-5 w-5" />
+                <span className="sr-only">Slack</span>
               </Link>
               <Link href="#" className="text-gray-400 hover:text-[#27c6d9]">
                 <Twitter className="h-5 w-5" />
@@ -72,28 +74,18 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services#infrastructure" className="text-gray-400 hover:text-[#27c6d9]">
-                  Infrastructure Automation
+                <Link href="/services#technical-training" className="text-gray-400 hover:text-[#27c6d9]">
+                  Technical Training
                 </Link>
               </li>
               <li>
-                <Link href="/services#orchestration" className="text-gray-400 hover:text-[#27c6d9]">
-                  Network Orchestration
+                <Link href="/services#product-training" className="text-gray-400 hover:text-[#27c6d9]">
+                  Product Training
                 </Link>
               </li>
               <li>
-                <Link href="/services#security" className="text-gray-400 hover:text-[#27c6d9]">
-                  Security Automation
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#consulting" className="text-gray-400 hover:text-[#27c6d9]">
-                  Consulting Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#training" className="text-gray-400 hover:text-[#27c6d9]">
-                  Training & Workshops
+                <Link href="/services#solution-development" className="text-gray-400 hover:text-[#27c6d9]">
+                  Solution Development
                 </Link>
               </li>
             </ul>
@@ -101,19 +93,26 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Contact Us</h3>
             <ul className="space-y-2">
-              <li className="flex items-start space-x-2">
-                <MapPin className="h-5 w-5 text-[#27c6d9] mt-0.5" />
-                <span className="text-gray-400">123 Network Street, Tech City, TC 12345</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Phone className="h-5 w-5 text-[#27c6d9]" />
-                <span className="text-gray-400">+1 (555) 123-4567</span>
-              </li>
               <li className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 text-[#27c6d9]" />
-                <span className="text-gray-400">info@netautomate.com</span>
+                <span className="text-gray-400">info@arsalanacademy.com</span>
               </li>
             </ul>
+            <div className="mt-6 space-y-3">
+              <h4 className="font-semibold text-sm">Subscribe to Newsletter</h4>
+              <form className="space-y-2">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                  required
+                />
+                <Button className="w-full bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
+                  Subscribe
+                </Button>
+              </form>
+              <p className="text-xs text-gray-400">Stay updated with our latest news and updates.</p>
+            </div>
           </div>
         </div>
         <div className="border-t border-gray-800 mt-12 pt-6 text-center text-gray-400">

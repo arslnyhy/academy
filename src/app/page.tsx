@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle, Server, Network, Shield } from "lucide-react"
+import { ArrowRight, CheckCircle, Server, Network, Wrench } from "lucide-react"
 
 export default function Home() {
   return (
@@ -71,7 +71,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center space-y-2 border border-gray-200 p-6 rounded-lg hover:shadow-lg transition-shadow">
               <div className="p-3 rounded-full bg-[#27c6d9]/10">
-                <Shield className="h-10 w-10 text-[#27c6d9]" />
+                <Wrench className="h-10 w-10 text-[#27c6d9]" />
               </div>
               <h3 className="text-xl font-bold">Solution Development</h3>
               <p className="text-gray-500 text-center">
@@ -87,68 +87,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-black">Why Choose Us</h2>
-              <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Our expertise and dedication set us apart in the network automation industry.
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <CheckCircle className="h-6 w-6 text-[#27c6d9] mt-1" />
-                <div>
-                  <h3 className="text-xl font-bold">Expert Team</h3>
-                  <p className="text-gray-500">
-                    Our team consists of certified network engineers with years of experience in automation.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <CheckCircle className="h-6 w-6 text-[#27c6d9] mt-1" />
-                <div>
-                  <h3 className="text-xl font-bold">Customized Solutions</h3>
-                  <p className="text-gray-500">
-                    We tailor our solutions to meet your specific business needs and requirements.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <CheckCircle className="h-6 w-6 text-[#27c6d9] mt-1" />
-                <div>
-                  <h3 className="text-xl font-bold">24/7 Support</h3>
-                  <p className="text-gray-500">
-                    Our dedicated support team is available around the clock to assist you.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-center">
-              <Image
-                src="/placeholder.svg?height=400&width=500"
-                alt="Network Engineers"
-                width={500}
-                height={400}
-                className="rounded-lg object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Ready to Transform Your Network?</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Let's Get in Touch</h2>
               <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Contact us today to discuss how our network automation solutions can benefit your business.
+                Contact us today to discuss how our services can benefit your business.
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -174,7 +120,17 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          
+          {/* Coming Soon Message */}
+          <div className="flex flex-col items-center justify-center mt-12 p-12 border border-gray-200 rounded-lg">
+            <h3 className="text-2xl font-bold text-[#27c6d9]">Coming Soon!</h3>
+            <p className="text-gray-500 mt-4 text-center max-w-[600px]">
+              We're working on exciting content to share with you. Check back soon for articles about network automation, best practices, and industry insights.
+            </p>
+          </div>
+
+          {/* Template for future blog posts (preserved for future use) */}
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <Image
                 src="/placeholder.svg?height=200&width=400"
@@ -198,56 +154,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-              <Image
-                src="/placeholder.svg?height=200&width=400"
-                alt="Blog Post 2"
-                width={400}
-                height={200}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold">Implementing SD-WAN: Best Practices</h3>
-                <p className="text-gray-500 mt-2">
-                  Learn the best practices for implementing SD-WAN in your organization.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href="/blogs/implementing-sd-wan"
-                    className="text-[#27c6d9] hover:underline inline-flex items-center"
-                  >
-                    Read More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-              <Image
-                src="/placeholder.svg?height=200&width=400"
-                alt="Blog Post 3"
-                width={400}
-                height={200}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold">Network Security Automation</h3>
-                <p className="text-gray-500 mt-2">Discover how automation can enhance your network security posture.</p>
-                <div className="mt-4">
-                  <Link
-                    href="/blogs/network-security-automation"
-                    className="text-[#27c6d9] hover:underline inline-flex items-center"
-                  >
-                    Read More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
           </div>
           <div className="flex justify-center mt-12">
             <Button asChild className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
               <Link href="/blogs">View All Blog Posts <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

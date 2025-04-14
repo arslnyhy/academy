@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Server, Network, Shield, Users, BookOpen } from "lucide-react"
+import { Server, Network, Wrench, Users, BookOpen } from "lucide-react"
 
 export default function ServicesPage() {
   return (
@@ -96,26 +96,32 @@ export default function ServicesPage() {
                   <h2 className="text-3xl font-bold tracking-tighter">Product Training</h2>
                 </div>
                 <p className="text-gray-500">
-                  Develop comprehensive training courses and educational content to help your users and customers master your products effectively.
+                  Comprehensive training programs and interactive workshops to help your users and customers master your products through hands-on learning.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start space-x-2">
                     <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
-                    <span>Custom course development and curriculum design</span>
+                    <span>Custom course development and curriculum</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
-                    <span>Interactive learning materials and documentation</span>
+                    <span>Interactive workshops and hands-on sessions</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
                     <span>User onboarding and certification programs</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
+                      <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
+                    </div>
+                    <span>Training materials and documentation</span>
                   </li>
                 </ul>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row pt-4">
@@ -130,30 +136,30 @@ export default function ServicesPage() {
             <div id="solution-development" className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center space-x-2">
-                  <Shield className="h-6 w-6 text-[#27c6d9]" />
+                  <Wrench className="h-6 w-6 text-[#27c6d9]" />
                   <h2 className="text-3xl font-bold tracking-tighter">Solution Development</h2>
                 </div>
                 <p className="text-gray-500">
-                  Solution development to help your internal teams and engineers maximize work efficiency.
+                  Custom development of automation tools, applications, and solutions to enhance your team's efficiency and streamline engineering workflows.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start space-x-2">
                     <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
-                    <span>Automated security policy enforcement</span>
+                    <span>Custom automation tools and scripts</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
-                    <span>Threat detection and response automation</span>
+                    <span>Internal workflow applications</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
-                    <span>Compliance monitoring and reporting</span>
+                    <span>Integration and API development</span>
                   </li>
                 </ul>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row pt-4">
@@ -171,120 +177,6 @@ export default function ServicesPage() {
                   className="rounded-lg object-cover"
                 />
               </div>
-            </div>
-
-            {/* Service 4 */}
-            <div id="consulting" className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="flex justify-center lg:order-last">
-                <Image
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Consulting Services"
-                  width={600}
-                  height={400}
-                  className="rounded-lg object-cover"
-                />
-              </div>
-              <div className="space-y-4">
-                <div className="inline-flex items-center space-x-2">
-                  <Users className="h-6 w-6 text-[#27c6d9]" />
-                  <h2 className="text-3xl font-bold tracking-tighter">Consulting Services</h2>
-                </div>
-                <p className="text-gray-500">
-                  Our expert consultants work with you to assess your current network infrastructure and develop a
-                  tailored automation strategy.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start space-x-2">
-                    <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
-                      <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
-                    </div>
-                    <span>Network assessment and audit</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
-                      <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
-                    </div>
-                    <span>Automation strategy development</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
-                      <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
-                    </div>
-                    <span>Technology selection and implementation planning</span>
-                  </li>
-                </ul>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row pt-4">
-                  <Button className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
-                    <Link href="/contact">Get Started</Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Service 5 */}
-            <div id="training" className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="space-y-4">
-                <div className="inline-flex items-center space-x-2">
-                  <BookOpen className="h-6 w-6 text-[#27c6d9]" />
-                  <h2 className="text-3xl font-bold tracking-tighter">Training & Workshops</h2>
-                </div>
-                <p className="text-gray-500">
-                  Empower your team with knowledge and skills needed for network automation.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start space-x-2">
-                    <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
-                      <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
-                    </div>
-                    <span>Customized training programs</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
-                      <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
-                    </div>
-                    <span>Hands-on workshops</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
-                      <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
-                    </div>
-                    <span>Certification preparation</span>
-                  </li>
-                </ul>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row pt-4">
-                  <Button className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
-                    <Link href="/contact">Get Started</Link>
-                  </Button>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <Image
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Training & Workshops"
-                  width={600}
-                  height={400}
-                  className="rounded-lg object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Ready to Get Started?</h2>
-              <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Contact us today to discuss how our services can help transform your network operations.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button asChild className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
-                <Link href="/contact">Contact Us</Link>
-              </Button>
             </div>
           </div>
         </div>

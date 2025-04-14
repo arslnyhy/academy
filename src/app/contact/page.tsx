@@ -4,7 +4,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail } from "lucide-react"
 
 export default function ContactPage() {
   const [state, handleSubmit] = useForm("mvgkygor");
@@ -45,23 +45,9 @@ export default function ContactPage() {
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter">Get in Touch</h2>
               <p className="text-gray-500">
-                Fill out the form below and one of our network automation experts will get back to you shortly.
+                Send us a message and we'll get back to you as soon as possible.
               </p>
               <div className="space-y-4 pt-4">
-                <div className="flex items-start space-x-4">
-                  <MapPin className="h-6 w-6 text-[#27c6d9] mt-0.5" />
-                  <div>
-                    <h3 className="font-bold">Address</h3>
-                    <p className="text-gray-500">123 Network Street, Tech City, TC 12345</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <Phone className="h-6 w-6 text-[#27c6d9] mt-0.5" />
-                  <div>
-                    <h3 className="font-bold">Phone</h3>
-                    <p className="text-gray-500">+1 (555) 123-4567</p>
-                  </div>
-                </div>
                 <div className="flex items-start space-x-4">
                   <Mail className="h-6 w-6 text-[#27c6d9] mt-0.5" />
                   <div>
@@ -120,28 +106,6 @@ export default function ContactPage() {
                   {state.submitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter">Our Location</h2>
-              <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Visit our office to meet our team in person.
-              </p>
-            </div>
-          </div>
-          <div className="mt-8 rounded-lg overflow-hidden">
-            {/* In a real application, you would embed a Google Map or similar here */}
-            <div className="w-full h-[400px] bg-gray-200 flex items-center justify-center">
-              <p className="text-gray-500">
-                Map Placeholder - In a real application, an interactive map would be displayed here.
-              </p>
             </div>
           </div>
         </div>
