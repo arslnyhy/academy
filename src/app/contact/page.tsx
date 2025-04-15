@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Mail } from "lucide-react"
 
 export default function ContactPage() {
-  const [state, handleSubmit] = useForm("mvgkygor");
+  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_ID!);
 
   if (state.succeeded) {
     return (

@@ -235,14 +235,11 @@ function getBlogPost(slug: string) {
   return posts[slug as keyof typeof posts] || null
 }
 
-interface PageProps {
-  params: {
-    slug: string
-  }
-  searchParams?: { [key: string]: string | string[] | undefined }
+type Props = {
+  params: { slug: string }
 }
 
-export default function BlogPostPage({ params }: PageProps) {
+export default function BlogPostPage({ params }: Props) {
   const post = getBlogPost(params.slug)
 
   if (!post) {
