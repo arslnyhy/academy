@@ -1,8 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Mail, Slack, Twitter, Linkedin, Github } from "lucide-react"
+import { Mail, Twitter, Linkedin, Github } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { DiscordIcon } from "@/components/icons/discord"
 
 export default function Footer() {
   return (
@@ -22,9 +23,9 @@ export default function Footer() {
             </Link>
             <p className="text-gray-400 mb-4">Professional network automation services for enterprises and teams.</p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-gray-400 hover:text-[#27c6d9]">
-                <Slack className="h-5 w-5" />
-                <span className="sr-only">Slack</span>
+              <Link href="https://discord.gg/TpD68vZa" className="text-gray-400 hover:text-[#27c6d9]" target="_blank">
+                <DiscordIcon className="h-5 w-5" />
+                <span className="sr-only">Discord</span>
               </Link>
               <Link href="#" className="text-gray-400 hover:text-[#27c6d9]">
                 <Twitter className="h-5 w-5" />

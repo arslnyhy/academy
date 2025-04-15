@@ -28,11 +28,11 @@ export default function Home() {
             </div>
             <div className="flex justify-center">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/main.png?height=800&width=1200"
                 alt="Network Automation"
-                width={600}
-                height={400}
-                className="rounded-lg object-cover"
+                width={1200}
+                height={800}
+                className="rounded-lg object-cover border-8 border-[#27c6d9]/40 shadow-lg hover:border-[#27c6d9]/70 transition-all duration-300"
               />
             </div>
           </div>
@@ -88,21 +88,18 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+      <section className="w-full py-8 md:py-16 lg:py-20 bg-black text-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Let's Get in Touch</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Schedule a Call</h2>
               <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Contact us today to discuss how our services can benefit your business.
+                Book a consultation to discuss how our services can transform your operations.
               </p>
             </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+            <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
               <Button asChild className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
-                <Link href="/contact">Contact Us</Link>
-              </Button>
-              <Button asChild variant="outline" className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10">
-                <Link href="/about">Learn More</Link>
+                <Link href="https://calendly.com" target="_blank">Book Now</Link>
               </Button>
             </div>
           </div>

@@ -70,7 +70,7 @@ export default function ServicesPage() {
               </div>
               <div className="flex justify-center">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/technical.png?height=400&width=600"
                   alt="Technical Training"
                   width={600}
                   height={400}
@@ -83,7 +83,7 @@ export default function ServicesPage() {
             <div id="product-training" className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="flex justify-center lg:order-last">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/product.png?height=400&width=600"
                   alt="Product Training"
                   width={600}
                   height={400}
@@ -170,7 +170,7 @@ export default function ServicesPage() {
               </div>
               <div className="flex justify-center">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/solution.png?height=400&width=600"
                   alt="Solution Development"
                   width={600}
                   height={400}

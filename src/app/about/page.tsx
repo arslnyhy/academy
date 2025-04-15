@@ -22,31 +22,30 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
+      <section className="w-full py-8 md:py-12 lg:py-16">
+        <div className="container px-4">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter">Our Story</h2>
-              <p className="text-gray-500">
-                Founded in 2015, Arsalan Academy began with a simple mission: to help professionals master network
-                automation and transform their careers. What started as a small team of network engineers has grown into
-                a leading training and consultancy firm specializing in network automation solutions.
+              <p className="text-gray-500 text-lg leading-relaxed">
+              Founded by Arsalan Yahyazadeh, our network automation training and consultancy startup is
+              dedicated to bridging the gap between complex network technologies and operational efficiency. 
               </p>
-              <p className="text-gray-500">
-                Over the years, we have helped hundreds of organizations across various industries streamline their
-                network operations, reduce costs, and improve efficiency through innovative automation solutions.
+              <p className="text-gray-500 text-lg leading-relaxed">
+              We understand that automation is not just a tool—it's a transformative approach that drives
+              innovation, reduces errors, and improves the scalability of your IT infrastructure.
               </p>
-              <p className="text-gray-500">
+              <p className="text-gray-500 text-lg leading-relaxed">
                 Today, we continue to push the boundaries of what's possible in network automation, staying at the
                 forefront of emerging technologies and best practices to deliver exceptional value to our clients.
               </p>
             </div>
             <div className="flex justify-center">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/about.png?height=600&width=600"
                 alt="Our Story"
                 width={600}
-                height={400}
+                height={600}
                 className="rounded-lg object-cover"
               />
             </div>
