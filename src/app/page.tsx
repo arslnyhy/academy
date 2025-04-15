@@ -94,7 +94,7 @@ export default function Home() {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Schedule a Call</h2>
               <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Book a consultation to discuss how our services can transform your operations.
+                Book a consultation to discuss how our services can help your operations.
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">

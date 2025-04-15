@@ -1,13 +1,31 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
-import { Mail, Twitter, Linkedin, Github } from "lucide-react"
+import { Mail, Twitter, Linkedin, Github, ArrowUp } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { DiscordIcon } from "@/components/icons/discord"
+import { useState, useEffect } from "react"
 
 export default function Footer() {
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-black text-white relative">
       <div className="container px-4 md:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -27,11 +45,11 @@ export default function Footer() {
                 <DiscordIcon className="h-5 w-5" />
                 <span className="sr-only">Discord</span>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-[#27c6d9]">
+              {/* <Link href="#" className="text-gray-400 hover:text-[#27c6d9]">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-[#27c6d9]">
+              </Link> */}
+              <Link href="https://www.linkedin.com/company/arsalanacademy" className="text-gray-400 hover:text-[#27c6d9]" target="_blank">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
@@ -104,7 +122,7 @@ export default function Footer() {
               <form className="space-y-2">
                 <Input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder="Does not work yet"
                   className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                   required
                 />
@@ -120,6 +138,17 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} Arsalan Academy. All rights reserved.</p>
         </div>
       </div>
+      
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 bg-[#27c6d9] hover:bg-[#1ea8b9] text-black p-3 rounded-full shadow-lg transition-all duration-300 ${
+          showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16 pointer-events-none'
+        }`}
+        aria-label="Back to top"
+      >
+        <ArrowUp className="h-5 w-5" />
+      </button>
     </footer>
   )
 }
