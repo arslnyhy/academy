@@ -15,13 +15,13 @@ export default function Header() {
       <div className="flex h-16 items-center px-4 md:px-6">
         <div className="flex-shrink-0 mr-auto">
           <Link href="/" className="flex items-center gap-2">
-            <Image
+            {/* <Image
               src="/logo.png"
               alt="Arsalan Academy Logo"
               width={32}
               height={32}
               className="h-auto rounded-full"
-            />
+            /> */}
             <span className="text-xl font-bold">Arsalan Academy</span>
           </Link>
         </div>
