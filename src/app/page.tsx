@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle, Server, Network, Wrench } from "lucide-react"
+import { ArrowRight, Server, Network, Wrench } from "lucide-react"
 
 export default function Home() {
   return (
@@ -122,7 +122,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center mt-12 p-12 border border-gray-200 rounded-lg">
             <h3 className="text-2xl font-bold text-[#27c6d9]">Coming Soon!</h3>
             <p className="text-gray-500 mt-4 text-center max-w-[600px]">
-              We're working on exciting content to share with you. Check back soon for articles about network automation, best practices, and industry insights.
+              We&apos;re working on exciting content to share with you. Check back soon for articles about network automation, best practices, and industry insights.
             </p>
           </div>
 

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Server, Network, Wrench, Users, BookOpen } from "lucide-react"
+import { Server, Network, Wrench } from "lucide-react"
 
 export default function ServicesPage() {
   return (
@@ -140,7 +140,7 @@ export default function ServicesPage() {
                   <h2 className="text-3xl font-bold tracking-tighter">Solution Development</h2>
                 </div>
                 <p className="text-gray-500">
-                  Custom development of automation tools, applications, and solutions to enhance your team's efficiency and streamline engineering workflows.
+                  Custom development of automation tools, applications, and solutions to enhance your team&apos;s efficiency and streamline engineering workflows.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start space-x-2">

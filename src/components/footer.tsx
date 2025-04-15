@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Mail, Twitter, Linkedin, Github, ArrowUp } from "lucide-react"
+import { Mail, Linkedin, Github, ArrowUp } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { DiscordIcon } from "@/components/icons/discord"
@@ -138,13 +138,12 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} Arsalan Academy. All rights reserved.</p>
         </div>
       </div>
-      
+
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 bg-[#27c6d9] hover:bg-[#1ea8b9] text-black p-3 rounded-full shadow-lg transition-all duration-300 ${
-          showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16 pointer-events-none'
-        }`}
+        className={`fixed bottom-8 right-8 bg-[#27c6d9] hover:bg-[#1ea8b9] text-black p-3 rounded-full shadow-lg transition-all duration-300 ${showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16 pointer-events-none'
+          }`}
         aria-label="Back to top"
       >
         <ArrowUp className="h-5 w-5" />

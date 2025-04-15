@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { Users } from "lucide-react"
 
 export default function AboutPage() {
   return (
@@ -32,11 +31,11 @@ export default function AboutPage() {
               dedicated to bridging the gap between complex network technologies and operational efficiency. 
               </p>
               <p className="text-gray-500 text-lg leading-relaxed">
-              We understand that automation is not just a tool—it's a transformative approach that drives
+              We understand that automation is not just a tool—it&apos;s a transformative approach that drives
               innovation, reduces errors, and improves the scalability of your IT infrastructure.
               </p>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Today, we continue to push the boundaries of what's possible in network automation, staying at the
+                Today, we continue to push the boundaries of what&apos;s possible in network automation, staying at the
                 forefront of emerging technologies and best practices to deliver exceptional value to our clients.
               </p>
             </div>

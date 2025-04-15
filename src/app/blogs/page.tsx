@@ -1,9 +1,3 @@
-import { Input } from "@/components/ui/input"
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Calendar, User } from "lucide-react"
-
 export default function BlogsPage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -30,7 +24,7 @@ export default function BlogsPage() {
           <div className="flex flex-col items-center justify-center p-12 border rounded-lg text-center">
             <h2 className="text-2xl font-bold text-[#27c6d9] mb-4">Blog Posts Coming Soon!</h2>
             <p className="text-gray-500 max-w-[600px] mb-8">
-              We're currently working on creating valuable content about network automation, best practices, and industry insights. 
+              We&apos;re currently working on creating valuable content about network automation, best practices, and industry insights. 
               Check back soon for our latest articles and updates.
             </p>
             <div className="w-16 h-1 bg-[#27c6d9]/20 rounded-full"></div>

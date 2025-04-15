@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail } from "lucide-react"
-import Link from "next/link"
 
 export default function ContactPage() {
   const [state, handleSubmit] = useForm("mvgkygor");
@@ -15,7 +14,7 @@ export default function ContactPage() {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-md mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
-          <p className="text-gray-600">Your message has been sent successfully. We'll get back to you soon.</p>
+          <p className="text-gray-600">Your message has been sent successfully. We&apos;ll get back to you soon.</p>
         </div>
       </div>
     );
@@ -46,7 +45,7 @@ export default function ContactPage() {
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter">Get in Touch</h2>
               <p className="text-gray-500">
-                Send us a message and we'll get back to you as soon as possible.
+                Send us a message and we&apos;ll get back to you as soon as possible.
               </p>
               <div className="space-y-4 pt-4">
                 <div className="flex items-start space-x-4">

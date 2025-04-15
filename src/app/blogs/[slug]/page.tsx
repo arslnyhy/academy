@@ -235,14 +235,21 @@ function getBlogPost(slug: string) {
   return posts[slug as keyof typeof posts] || null
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+interface PageProps {
+  params: {
+    slug: string
+  }
+  searchParams?: { [key: string]: string | string[] | undefined }
+}
+
+export default function BlogPostPage({ params }: PageProps) {
   const post = getBlogPost(params.slug)
 
   if (!post) {
     return (
       <div className="flex flex-col min-h-screen items-center justify-center p-4">
         <h1 className="text-2xl font-bold mb-4">Blog Post Not Found</h1>
-        <p className="text-gray-500 mb-6">The blog post you're looking for doesn't exist or has been moved.</p>
+        <p className="text-gray-500 mb-6">The blog post you&apos;re looking for doesn&apos;t exist or has been moved.</p>
         <Button className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
           <Link href="/blogs">Back to Blogs</Link>
         </Button>
