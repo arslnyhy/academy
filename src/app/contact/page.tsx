@@ -52,7 +52,7 @@ export default function ContactPage() {
                   <Mail className="h-6 w-6 text-[#27c6d9] mt-0.5" />
                   <div>
                     <h3 className="font-bold">Email</h3>
-                    <p className="text-gray-500">info@arsalanacademy.com</p>
+                    <p className="text-gray-500">email.com</p>
                   </div>
                 </div>
               </div>

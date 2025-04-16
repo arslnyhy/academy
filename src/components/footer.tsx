@@ -114,7 +114,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 text-[#27c6d9]" />
-                <span className="text-gray-400">info@arsalanacademy.com</span>
+                <span className="text-gray-400">email.com</span>
               </li>
             </ul>
             <div className="mt-6 space-y-3">
@@ -122,7 +122,7 @@ export default function Footer() {
               <form className="space-y-2">
                 <Input
                   type="email"
-                  placeholder="Does not work yet"
+                  placeholder="Coming soon!"
                   className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                   required
                 />
