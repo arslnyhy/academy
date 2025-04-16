@@ -57,7 +57,7 @@ export default function Header() {
                     Contact Us
                   </Link>
                   <Link
-                    href="https://calendly.com"
+                    href="https://calendly.com/arsalan-academy/"
                     target="_blank"
                     className="block px-4 py-2 text-sm text-black hover:text-[#27c6d9] transition-colors"
                     onClick={() => setIsContactOpen(false)}

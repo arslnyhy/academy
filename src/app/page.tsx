@@ -99,7 +99,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
               <Button asChild className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
-                <Link href="https://calendly.com" target="_blank">Book Now</Link>
+                <Link href="https://calendly.com/arsalan-academy/" target="_blank">Book Now</Link>
               </Button>
             </div>
           </div>
