@@ -3,7 +3,11 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Calendar, User, ArrowRight } from "lucide-react"
 import { Input } from "@/components/ui/input"
-export default function BlogsPage() {
+import { getPublishedPosts } from "@/lib/posts"
+
+export default async function BlogsPage() {
+  const posts = await getPublishedPosts()
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -25,53 +29,49 @@ export default function BlogsPage() {
       {/* Blog Posts */}
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
-          {/* Coming Soon Message */}
-          {/* <div className="flex flex-col items-center justify-center p-12 border rounded-lg text-center">
-            <h2 className="text-2xl font-bold text-[#27c6d9] mb-4">Blog Posts Coming Soon!</h2>
-            <p className="text-gray-500 max-w-[600px] mb-8">
-              We&apos;re currently working on creating valuable content and training materials. 
-              Check back soon for our latest articles and updates.
-            </p>
-            <div className="w-16 h-1 bg-[#27c6d9]/20 rounded-full"></div>
-          </div> */}
-
-          {/* Template for future blog posts (preserved for future use) */}
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="group flex flex-col border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="relative">
-                <Image
-                  src="/placeholder.svg?height=250&width=500"
-                  alt="Blog Post Title"
-                  width={500}
-                  height={250}
-                  className="w-full h-48 object-cover transition-transform group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
-              </div>
-              <div className="flex-1 p-6">
-                <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4 text-[#27c6d9]" />
-                    <span>Date</span>
+          {posts && posts.length > 0 ? (
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {posts.map((post) => (
+                <div key={post.id} className="group flex flex-col border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="relative">
+                    <Image
+                      src={post.cover_image_url || "/placeholder.svg?height=250&width=500"}
+                      alt={post.title}
+                      width={500}
+                      height={250}
+                      className="w-full h-48 object-cover transition-transform group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
                   </div>
-                  <div className="flex items-center gap-1">
-                    <User className="h-4 w-4 text-[#27c6d9]" />
-                    <span>Author</span>
+                  <div className="flex-1 p-6">
+                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="h-4 w-4 text-[#27c6d9]" />
+                        <span>{post.published_at ? new Date(post.published_at).toLocaleDateString() : 'Date N/A'}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">{post.title}</h3>
+                    <p className="text-gray-500 mb-4">
+                      {post.excerpt || "No excerpt provided."}
+                    </p>
+                    <Link
+                      href={`/blogs/${post.slug}`}
+                      className="inline-flex items-center text-[#27c6d9] hover:underline mt-auto"
+                    >
+                      Read More <ArrowRight className="ml-1 h-4 w-4" />
+                    </Link>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Blog Post Title</h3>
-                <p className="text-gray-500 mb-4">
-                  Blog post description goes here. This is a brief summary of what the article is about.
-                </p>
-                <Link
-                  href="/blogs/post-slug"
-                  className="inline-flex items-center text-[#27c6d9] hover:underline mt-auto"
-                >
-                  Read More <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
+              ))}
             </div>
-          </div>
+          ) : (
+            <div className="text-center py-12">
+              <h2 className="text-2xl font-bold text-[#27c6d9] mb-4">No Blog Posts Yet</h2>
+              <p className="text-gray-500 max-w-[600px] mb-8">
+                Check back soon for our latest articles and updates.
+              </p>
+            </div>
+          )}
 
           {/* Pagination Template (preserved for future use) */}
           <div className="flex justify-center items-center gap-2 mt-12">
