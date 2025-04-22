@@ -15,7 +15,7 @@ export default function ServicesPage() {
                 Our <span className="text-[#27c6d9]">Services</span>
               </h1>
               <p className="max-w-[700px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Comprehensive network automation solutions tailored to your business needs.
+                Comprehensive training programs and solution on Networking, Security, and Machine Learning.
               </p>
             </div>
           </div>
@@ -34,32 +34,32 @@ export default function ServicesPage() {
                   <h2 className="text-3xl font-bold tracking-tighter">Technical Training</h2>
                 </div>
                 <p className="text-gray-500">
-                  Technical training to help your team build, deploy, and maintain automated network infrastructure.
+                  Technical training to help you gain a deep understanding of both foundational and training technologies.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start space-x-2">
                     <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
-                    <span>Network device provisioning and configuration</span>
+                    <span>Networking Fundamentals and Advanced Topics</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
-                    <span>Infrastructure as Code (IaC) implementation</span>
+                    <span>Security Fundamentals and Advanced Topics</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
-                    <span>Automated testing and validation</span>
+                    <span>Machine learning and AI concepts</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <div className="h-5 w-5 rounded-full bg-[#27c6d9]/20 flex items-center justify-center mt-0.5">
                       <div className="h-2 w-2 rounded-full bg-[#27c6d9]"></div>
                     </div>
-                    <span>Configuration management and version control</span>
+                    <span>Python and scripting for automation</span>
                   </li>
                 </ul>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row pt-4">

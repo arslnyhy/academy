@@ -39,7 +39,7 @@ export default function Footer() {
               />
               <span className="text-xl font-bold">Arsalan Academy</span>
             </Link>
-            <p className="text-gray-400 mb-4">Professional network automation services for enterprises and teams.</p>
+            <p className="text-gray-400 mb-4">Professional IT education and services for individuals and teams.</p>
             <div className="flex space-x-4">
               <Link href="https://discord.gg/TpD68vZa" className="text-gray-400 hover:text-[#27c6d9]" target="_blank">
                 <DiscordIcon className="h-5 w-5" />

@@ -12,7 +12,7 @@ export default function AboutPage() {
                 About <span className="text-[#27c6d9]">Arsalan Academy</span>
               </h1>
               <p className="max-w-[700px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                We are a team of network automation experts dedicated to helping businesses optimize their network
+                We are a team of IT education and training experts dedicated to helping individuals and teams optimize their
                 operations.
               </p>
             </div>
@@ -27,16 +27,20 @@ export default function AboutPage() {
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter">Our Story</h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-              Founded by Arsalan Yahyazadeh, our network automation training and consultancy startup is
-              dedicated to bridging the gap between complex network technologies and operational efficiency. 
+              Founded by Arsalan Yahyazadeh, our IT education and training academy is dedicated to bridging 
+              the gap between complex technologies and practical implementation. We specialize in Networking, 
+              Security, and Machine Learning, providing hands-on training that transforms theoretical knowledge 
+              into real-world expertise.
               </p>
               <p className="text-gray-500 text-lg leading-relaxed">
-              We understand that automation is not just a tool—it&apos;s a transformative approach that drives
-              innovation, reduces errors, and improves the scalability of your IT infrastructure.
+              We understand that education is not just about learning—it&apos;s about transformation. Our approach 
+              combines theoretical foundations with practical applications, enabling professionals to adapt to 
+              rapidly evolving technologies while building robust, scalable solutions.
               </p>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Today, we continue to push the boundaries of what&apos;s possible in network automation, staying at the
-                forefront of emerging technologies and best practices to deliver exceptional value to our clients.
+                Today, we continue to evolve our curriculum and teaching methodologies, staying at the forefront 
+                of technological advancements to provide our students with cutting-edge knowledge and practical 
+                skills that drive their career growth and success.
               </p>
             </div>
             <div className="flex justify-center">

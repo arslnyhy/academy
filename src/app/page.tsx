@@ -12,10 +12,11 @@ export default function Home() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="space-y-4">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                Arsalan <span className="text-[#27c6d9]">Academy</span> for Network Automation
+                <div>Arsalan <span className="text-[#27c6d9]">Academy</span> for</div>
+                <div>IT Practitioners</div>
               </h1>
               <p className="max-w-[600px] text-gray-300 md:text-xl">
-                We empower engineers and companies with the skills to build, deploy, and maintain automated network infrastructure.
+                We empower engineers and teams with the skills to build, deploy, and maintain modern IT infrastructure.
               </p>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Button asChild className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
@@ -46,7 +47,7 @@ export default function Home() {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Services</h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                We provide comprehensive network automation training and solutions to help your business thrive in the digital age.
+                We provide comprehensive Networking, Security, and Machine Learning training and solutions to help you thrive in the digital age.
               </p>
             </div>
           </div>
@@ -57,7 +58,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold">Technical Training</h3>
               <p className="text-gray-500 text-center">
-                Technical training to help your team build, deploy, and maintain automated network infrastructure.
+                Technical training to help your team build, deploy, and maintain modern IT infrastructure.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 border border-gray-200 p-6 rounded-lg hover:shadow-lg transition-shadow">
@@ -113,7 +114,7 @@ export default function Home() {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-black">Latest from Our Blog</h2>
               <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Stay updated with the latest trends and insights in network automation.
+                Stay updated with the latest trends and insights in today&apos;s IT industry.
               </p>
             </div>
           </div>
@@ -122,7 +123,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center mt-12 p-12 border border-gray-200 rounded-lg">
             <h3 className="text-2xl font-bold text-[#27c6d9]">Coming Soon!</h3>
             <p className="text-gray-500 mt-4 text-center max-w-[600px]">
-              We&apos;re working on exciting content to share with you. Check back soon for articles about network automation, best practices, and industry insights.
+              We&apos;re working on exciting content to share with you. Check back soon for articles about Networking, Security, and Machine Learning/AI.
             </p>
           </div>
 
