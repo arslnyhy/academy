@@ -31,7 +31,7 @@ export default function ContactPage() {
                 Contact <span className="text-[#27c6d9]">Us</span>
               </h1>
               <p className="max-w-[700px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Get in touch with our team to discuss your network automation needs.
+                Get in touch with our team.
               </p>
             </div>
           </div>
