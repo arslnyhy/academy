@@ -1,22 +1,38 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Calendar, User, Tag, Share2, Facebook, Twitter, Linkedin } from "lucide-react"
+import { ArrowLeft, Calendar, Share2, Facebook, Twitter, Linkedin } from "lucide-react"
 import { getPostBySlug } from "@/lib/posts"
 import { notFound } from "next/navigation"
-import { format } from 'date-fns'
+import { Metadata } from 'next'
+// import { format } from 'date-fns'
 import Markdown from 'markdown-to-jsx'
 
-type BlogPostPageProps = {
-  params: { slug: string }
+export type ParamsType = Promise<{ slug: string }>;
+
+export async function generateMetadata({ params }: { params: ParamsType }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const post = await getPostBySlug(resolvedParams.slug);
+  
+  if (!post) {
+    return {
+      title: 'Post Not Found'
+    }
+  }
+  
+  return {
+    title: post.title,
+    description: post.excerpt || undefined,
+  }
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = params
-  const post = await getPostBySlug(slug)
+export default async function BlogPostPage({ params }: { params: ParamsType }) {
+  const resolvedParams = await params;
+  const { slug } = resolvedParams;
+  const post = await getPostBySlug(slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (

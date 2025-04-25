@@ -1,8 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Calendar, User, ArrowRight } from "lucide-react"
-import { Input } from "@/components/ui/input"
+import { Calendar, ArrowRight } from "lucide-react"
+// import { Input } from "@/components/ui/input"
 import { getPublishedPosts } from "@/lib/posts"
 
 export default async function BlogsPage() {
@@ -65,9 +65,9 @@ export default async function BlogsPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-12">
+            <div className="flex flex-col items-center justify-center text-center py-12">
               <h2 className="text-2xl font-bold text-[#27c6d9] mb-4">No Blog Posts Yet</h2>
-              <p className="text-gray-500 max-w-[600px] mb-8">
+              <p className="text-gray-500 max-w-[600px] mb-8 mx-auto">
                 Check back soon for our latest articles and updates.
               </p>
             </div>
@@ -113,7 +113,7 @@ export default async function BlogsPage() {
       </section>
 
       {/* Newsletter Section Template (preserved for future use) */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+      {/* <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -136,7 +136,7 @@ export default async function BlogsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }
