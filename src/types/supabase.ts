@@ -10,4 +10,14 @@ export interface Post {
   published: boolean;
   published_at?: string | null; // timestamp with time zone
   author_id?: string | null; // uuid
+}
+
+export interface Instructor {
+  id: string; // uuid
+  created_at: string; // timestamp with time zone
+  updated_at: string; // timestamp with time zone
+  name: string;
+  email: string;
+  avatar_url?: string | null;
+  bio?: string | null;
 } 

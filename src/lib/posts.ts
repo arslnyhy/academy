@@ -1,11 +1,22 @@
 import { createServerComponentClient } from './supabase'
-import { Post } from '@/types/supabase'
+import { Post, Instructor } from '@/types/supabase'
 
-export async function getPublishedPosts(): Promise<Post[]> {
+export interface PostWithAuthor extends Post {
+  instructors: Pick<Instructor, 'id' | 'name' | 'avatar_url'>;
+}
+
+export async function getPublishedPosts(): Promise<PostWithAuthor[]> {
   const supabase = await createServerComponentClient()
   const { data, error } = await supabase
     .from('posts')
-    .select('*')
+    .select(`
+      *,
+      instructors!author_id (
+        id,
+        name,
+        avatar_url
+      )
+    `)
     .eq('published', true)
     .order('published_at', { ascending: false, nullsFirst: false })
     .order('created_at', { ascending: false })
@@ -15,16 +26,23 @@ export async function getPublishedPosts(): Promise<Post[]> {
     return []
   }
 
-  return data || []
+  return (data as PostWithAuthor[]) || []
 }
 
-export async function getPostBySlug(slug: string): Promise<Post | null> {
+export async function getPostBySlug(slug: string): Promise<PostWithAuthor | null> {
   const supabase = await createServerComponentClient()
   const { data, error } = await supabase
     .from('posts')
-    .select('*')
+    .select(`
+      *,
+      instructors!author_id (
+        id,
+        name,
+        avatar_url
+      )
+    `)
     .eq('slug', slug)
-    .eq('published', true) // Ensure we only fetch published posts by slug
+    .eq('published', true)
     .single()
 
   if (error) {
@@ -35,5 +53,5 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     return null
   }
 
-  return data
+  return data as PostWithAuthor
 } 

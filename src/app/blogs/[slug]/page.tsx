@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Calendar, Share2, Facebook, Twitter, Linkedin } from "lucide-react"
+import { ArrowLeft, Calendar, Share2, Facebook, Twitter, Linkedin, User } from "lucide-react"
 import { getPostBySlug } from "@/lib/posts"
 import { notFound } from "next/navigation"
 import { Metadata } from 'next'
@@ -48,13 +48,29 @@ export default async function BlogPostPage({ params }: { params: ParamsType }) {
       <article className="w-full py-12 md:py-16 lg:py-20">
         <div className="container px-4 md:px-6 max-w-4xl mx-auto">
           <header className="mb-8 md:mb-12">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl mb-4">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl mb-6">
               {post.title}
             </h1>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500">
-              <div className="flex items-center gap-1">
-                <Calendar className="h-4 w-4 text-[#27c6d9]" />
-                <span>Published on {post.published_at ? new Date(post.published_at).toLocaleDateString() : 'N/A'}</span>
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-base text-gray-500">
+              <div className="flex items-center gap-3">
+                {post.instructors?.avatar_url ? (
+                  <Image
+                    src={post.instructors.avatar_url}
+                    alt={post.instructors.name}
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                  />
+                ) : (
+                  <div className="w-10 h-10 bg-[#27c6d9]/10 rounded-full flex items-center justify-center">
+                    <User className="h-6 w-6 text-[#27c6d9]" />
+                  </div>
+                )}
+                <span className="font-medium">{post.instructors?.name || 'Anonymous'}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar className="h-5 w-5 text-[#27c6d9]" />
+                <span>{post.published_at ? new Date(post.published_at).toLocaleDateString() : 'N/A'}</span>
               </div>
             </div>
           </header>
