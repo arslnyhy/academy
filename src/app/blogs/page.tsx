@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Calendar, ArrowRight, User } from "lucide-react"
+import { Calendar, ArrowRight } from "lucide-react"
 // import { Input } from "@/components/ui/input"
 import { getPublishedPosts } from "@/lib/posts"
 
@@ -49,10 +49,10 @@ export default async function BlogsPage() {
                         <Calendar className="h-4 w-4 text-[#27c6d9]" />
                         <span>{post.published_at ? new Date(post.published_at).toLocaleDateString() : 'Date N/A'}</span>
                       </div>
-                      <div className="flex items-center gap-2">
+                      {/* <div className="flex items-center gap-2">
                         <User className="h-4 w-4 text-[#27c6d9]" />
                         <span>{post.instructors?.name || 'Anonymous'}</span>
-                      </div>
+                      </div> */}
                     </div>
                     <h3 className="text-xl font-bold mb-2">{post.title}</h3>
                     <p className="text-gray-500 mb-4">
