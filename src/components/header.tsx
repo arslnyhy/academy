@@ -29,14 +29,14 @@ export default function Header() {
           <Link href="/" className="text-sm font-medium text-black hover:text-[#27c6d9] transition-colors">
             Home
           </Link>
-          <Link href="/about" className="text-sm font-medium text-black hover:text-[#27c6d9] transition-colors">
-            About
+          <Link href="/blogs" className="text-sm font-medium text-black hover:text-[#27c6d9] transition-colors">
+            Blogs
           </Link>
           <Link href="/services" className="text-sm font-medium text-black hover:text-[#27c6d9] transition-colors">
             Services
           </Link>
-          <Link href="/blogs" className="text-sm font-medium text-black hover:text-[#27c6d9] transition-colors">
-            Blogs
+          <Link href="/about" className="text-sm font-medium text-black hover:text-[#27c6d9] transition-colors">
+            About
           </Link>
           <div className="relative">
             <button
@@ -89,11 +89,11 @@ export default function Header() {
               Home
             </Link>
             <Link
-              href="/about"
+              href="/blogs"
               className="text-sm font-medium text-black hover:text-[#27c6d9] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              About
+              Blogs
             </Link>
             <Link
               href="/services"
@@ -103,11 +103,11 @@ export default function Header() {
               Services
             </Link>
             <Link
-              href="/blogs"
+              href="/about"
               className="text-sm font-medium text-black hover:text-[#27c6d9] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Blogs
+              About
             </Link>
             <Link
               href="/contact"
