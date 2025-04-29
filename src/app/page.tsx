@@ -1,9 +1,12 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Server, Network, Wrench } from "lucide-react"
+import { ArrowRight, Server, Network, Wrench, Calendar } from "lucide-react"
+import { getPublishedPosts } from "@/lib/posts"
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getPublishedPosts()
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -119,45 +122,57 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Coming Soon Message */}
-          <div className="flex flex-col items-center justify-center mt-12 p-12 border border-gray-200 rounded-lg">
-            <h3 className="text-2xl font-bold text-[#27c6d9]">Coming Soon!</h3>
-            <p className="text-gray-500 mt-4 text-center max-w-[600px]">
-              We&apos;re working on exciting content to share with you. Check back soon for articles about Networking, Security, and Machine Learning/AI.
-            </p>
-          </div>
-
-          {/* Template for future blog posts (preserved for future use) */}
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-              <Image
-                src="/placeholder.svg?height=200&width=400"
-                alt="Blog Post 1"
-                width={400}
-                height={200}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold">The Future of Network Automation</h3>
-                <p className="text-gray-500 mt-2">
-                  Explore the emerging trends and technologies shaping the future of network automation.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href="/blogs/future-of-network-automation"
-                    className="text-[#27c6d9] hover:underline inline-flex items-center"
-                  >
-                    Read More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </div>
+          {/* Blog Posts */}
+          {posts && posts.length > 0 ? (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                {posts.slice(0, 3).map((post) => (
+                  <div key={post.id} className="group flex flex-col border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    <div className="relative">
+                      <Image
+                        src={post.cover_image_url || "/placeholder.svg?height=250&width=500"}
+                        alt={post.title}
+                        width={500}
+                        height={250}
+                        className="w-full h-48 object-cover transition-transform group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
+                    </div>
+                    <div className="flex-1 p-6">
+                      <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="h-4 w-4 text-[#27c6d9]" />
+                          <span>{post.published_at ? new Date(post.published_at).toLocaleDateString() : 'Date N/A'}</span>
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">{post.title}</h3>
+                      <p className="text-gray-500 mb-4">
+                        {post.excerpt || "No excerpt provided."}
+                      </p>
+                      <Link
+                        href={`/blogs/${post.slug}`}
+                        className="inline-flex items-center text-[#27c6d9] hover:underline mt-auto"
+                      >
+                        Read More <ArrowRight className="ml-1 h-4 w-4" />
+                      </Link>
+                    </div>
+                  </div>
+                ))}
               </div>
+              <div className="flex justify-center mt-12">
+                <Button asChild className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
+                  <Link href="/blogs">View All Blog Posts <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                </Button>
+              </div>
+            </>
+          ) : (
+            <div className="flex flex-col items-center justify-center mt-12 p-12 border border-gray-200 rounded-lg">
+              <h3 className="text-2xl font-bold text-[#27c6d9]">Coming Soon!</h3>
+              <p className="text-gray-500 mt-4 text-center max-w-[600px]">
+                We&apos;re working on exciting content to share with you. Check back soon for articles about Networking, Security, and AI.
+              </p>
             </div>
-          </div>
-          <div className="flex justify-center mt-12">
-            <Button asChild className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
-              <Link href="/blogs">View All Blog Posts <ArrowRight className="ml-2 h-4 w-4" /></Link>
-            </Button>
-          </div> */}
+          )}
         </div>
       </section>
     </div>
