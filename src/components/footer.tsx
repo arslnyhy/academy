@@ -53,7 +53,7 @@ export default function Footer() {
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-[#27c6d9]">
+              <Link href="https://github.com/orgs/arsalan-academy/repositories" className="text-gray-400 hover:text-[#27c6d9]" target="_blank">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </Link>
