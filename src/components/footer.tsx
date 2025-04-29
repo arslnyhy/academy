@@ -41,7 +41,7 @@ export default function Footer() {
             </Link>
             <p className="text-gray-400 mb-4">Professional IT education and services for individuals and teams.</p>
             <div className="flex space-x-4">
-              <Link href="https://discord.gg/TpD68vZa" className="text-gray-400 hover:text-[#27c6d9]" target="_blank">
+              <Link href="https://discord.gg/5mApWhSE" className="text-gray-400 hover:text-[#27c6d9]" target="_blank">
                 <DiscordIcon className="h-5 w-5" />
                 <span className="sr-only">Discord</span>
               </Link>
