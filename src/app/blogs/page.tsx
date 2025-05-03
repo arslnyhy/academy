@@ -44,7 +44,7 @@ export default async function BlogsPage() {
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
                   </div>
                   <div className="flex-1 p-6">
-                    <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                    <div className="flex items-center gap-4 text-sm text-gray-700 mb-3">
                       <div className="flex items-center gap-2">
                         <Calendar className="h-4 w-4 text-[#27c6d9]" />
                         <span>{post.published_at ? new Date(post.published_at).toLocaleDateString() : 'Date N/A'}</span>
@@ -55,7 +55,7 @@ export default async function BlogsPage() {
                       </div> */}
                     </div>
                     <h3 className="text-xl font-bold mb-2">{post.title}</h3>
-                    <p className="text-gray-500 mb-4">
+                    <p className="text-gray-700 mb-4">
                       {post.excerpt || "No excerpt provided."}
                     </p>
                     <Link
@@ -71,7 +71,7 @@ export default async function BlogsPage() {
           ) : (
             <div className="flex flex-col items-center justify-center text-center py-12">
               <h2 className="text-2xl font-bold text-[#27c6d9] mb-4">No Blog Posts Yet</h2>
-              <p className="text-gray-500 max-w-[600px] mb-8 mx-auto">
+              <p className="text-gray-700 max-w-[600px] mb-8 mx-auto">
                 Check back soon for our latest articles and updates.
               </p>
             </div>
@@ -81,34 +81,33 @@ export default async function BlogsPage() {
           <div className="flex justify-center items-center gap-2 mt-12">
             <Button
               variant="outline"
-              className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10"
+              className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10 hover:text-[#27c6d9] disabled:border-gray-300 disabled:text-gray-400"
               disabled
             >
               Previous
             </Button>
             <div className="flex gap-1">
               <Button
-                variant="outline"
-                className="border-[#27c6d9] bg-[#27c6d9] text-white hover:bg-[#27c6d9]/90"
+                className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black"
               >
                 1
               </Button>
               <Button
                 variant="outline"
-                className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10"
+                className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10 hover:text-[#27c6d9]"
               >
                 2
               </Button>
               <Button
                 variant="outline"
-                className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10"
+                className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10 hover:text-[#27c6d9]"
               >
                 3
               </Button>
             </div>
             <Button
               variant="outline"
-              className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10"
+              className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10 hover:text-[#27c6d9]"
             >
               Next
             </Button>

@@ -15,7 +15,7 @@ export default function ServicesPage() {
                 Our <span className="text-[#27c6d9]">Services</span>
               </h1>
               <p className="max-w-[700px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Comprehensive training programs and solution on Networking, Security, and Machine Learning.
+                Comprehensive training programs and solutions on foundational and hot industry topics.
               </p>
             </div>
           </div>
@@ -33,7 +33,7 @@ export default function ServicesPage() {
                   <Server className="h-6 w-6 text-[#27c6d9]" />
                   <h2 className="text-3xl font-bold tracking-tighter">Technical Training</h2>
                 </div>
-                <p className="text-gray-500">
+                <p className="text-gray-700">
                   Technical training to help you gain a deep understanding of both foundational and training technologies.
                 </p>
                 <ul className="space-y-2">
@@ -79,6 +79,8 @@ export default function ServicesPage() {
               </div>
             </div>
 
+            <hr className="my-12 border-gray-200" />
+
             {/* Service 2 */}
             <div id="product-training" className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="flex justify-center lg:order-last">
@@ -95,7 +97,7 @@ export default function ServicesPage() {
                   <Network className="h-6 w-6 text-[#27c6d9]" />
                   <h2 className="text-3xl font-bold tracking-tighter">Product Training</h2>
                 </div>
-                <p className="text-gray-500">
+                <p className="text-gray-700">
                   Comprehensive training programs and interactive workshops to help your users and customers master your products through hands-on learning.
                 </p>
                 <ul className="space-y-2">
@@ -132,6 +134,8 @@ export default function ServicesPage() {
               </div>
             </div>
 
+            <hr className="my-12 border-gray-200" />
+
             {/* Service 3 */}
             <div id="solution-development" className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="space-y-4">
@@ -139,7 +143,7 @@ export default function ServicesPage() {
                   <Wrench className="h-6 w-6 text-[#27c6d9]" />
                   <h2 className="text-3xl font-bold tracking-tighter">Solution Development</h2>
                 </div>
-                <p className="text-gray-500">
+                <p className="text-gray-700">
                   Custom development of automation tools, applications, and solutions to enhance your team&apos;s efficiency and streamline engineering workflows.
                 </p>
                 <ul className="space-y-2">

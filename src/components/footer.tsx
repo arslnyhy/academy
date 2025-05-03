@@ -41,21 +41,21 @@ export default function Footer() {
             </Link>
             <p className="text-gray-400 mb-4">Professional IT education and services for individuals and teams.</p>
             <div className="flex space-x-4">
-              <Link href="https://discord.gg/5mApWhSE" className="text-gray-400 hover:text-[#27c6d9]" target="_blank">
+              <Link href="https://discord.gg/5mApWhSE" className="text-gray-400 hover:text-[#27c6d9]" target="_blank" title="Join Discord community">
                 <DiscordIcon className="h-5 w-5" />
-                <span className="sr-only">Discord</span>
+                <span className="sr-only">Join Discord community</span>
               </Link>
               {/* <Link href="#" className="text-gray-400 hover:text-[#27c6d9]">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link> */}
-              <Link href="https://www.linkedin.com/company/arsalanacademy" className="text-gray-400 hover:text-[#27c6d9]" target="_blank">
+              <Link href="https://www.linkedin.com/company/arsalanacademy" className="text-gray-400 hover:text-[#27c6d9]" target="_blank" title="Connect with us on LinkedIn">
                 <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
+                <span className="sr-only">Visit LinkedIn page</span>
               </Link>
-              <Link href="https://github.com/orgs/arsalan-academy/repositories" className="text-gray-400 hover:text-[#27c6d9]" target="_blank">
+              <Link href="https://github.com/orgs/arsalan-academy/repositories" className="text-gray-400 hover:text-[#27c6d9]" target="_blank" title="Visit GitHub repositories">
                 <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
+                <span className="sr-only">Visit GitHub repositories</span>
               </Link>
             </div>
           </div>

@@ -81,7 +81,7 @@ export default async function BlogPostPage({ params }: { params: ParamsType }) {
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl mb-6">
               {post.title}
             </h1>
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-base text-gray-500">
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-base text-gray-700">
               <div className="flex items-center gap-3">
                 {post.instructors?.avatar_url ? (
                   <Image
@@ -138,13 +138,16 @@ export default async function BlogPostPage({ params }: { params: ParamsType }) {
             {post.content ? (
               <Markdown>{post.content}</Markdown>
             ) : (
-              <p className="text-gray-500">No content available for this post.</p>
+              <div className="text-center mt-16">
+                <p className="text-xl text-[#27c6d9] mb-4">That&apos;s all for now!</p>
+                <p className="text-gray-700">No content available for this post.</p>
+              </div>
             )}
           </div>
 
           <footer className="mt-12 pt-8 border-t border-gray-200">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-500">Share this post:</span>
+              <span className="text-sm text-gray-700">Share this post:</span>
               <ShareButtons slug={slug} title={post.title} />
             </div>
           </footer>

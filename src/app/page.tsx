@@ -25,7 +25,7 @@ export default async function Home() {
                 <Button asChild className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
                   <Link href="/contact">Get Started</Link>
                 </Button>
-                <Button asChild variant="outline" className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10">
+                <Button asChild className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
                   <Link href="/services">Our Services</Link>
                 </Button>
               </div>
@@ -49,8 +49,8 @@ export default async function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Services</h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                We provide comprehensive Networking, Security, and Machine Learning training and solutions to help you thrive in the digital age.
+              <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                We provide comprehensive IT training and solutions to help you thrive in the digital age.
               </p>
             </div>
           </div>
@@ -60,7 +60,7 @@ export default async function Home() {
                 <Server className="h-10 w-10 text-[#27c6d9]" />
               </div>
               <h3 className="text-xl font-bold">Technical Training</h3>
-              <p className="text-gray-500 text-center">
+              <p className="text-gray-700 text-center">
                 Technical training to help your team build, deploy, and maintain modern IT infrastructure.
               </p>
             </div>
@@ -69,7 +69,7 @@ export default async function Home() {
                 <Network className="h-10 w-10 text-[#27c6d9]" />
               </div>
               <h3 className="text-xl font-bold">Product Training</h3>
-              <p className="text-gray-500 text-center">
+              <p className="text-gray-700 text-center">
                 Product training to help your users and community get the most out of your products.
               </p>
             </div>
@@ -78,7 +78,7 @@ export default async function Home() {
                 <Wrench className="h-10 w-10 text-[#27c6d9]" />
               </div>
               <h3 className="text-xl font-bold">Solution Development</h3>
-              <p className="text-gray-500 text-center">
+              <p className="text-gray-700 text-center">
                 Solution development to help your internal teams and engineers maximize work efficiency.
               </p>
             </div>
@@ -146,7 +146,7 @@ export default async function Home() {
                         </div>
                       </div>
                       <h3 className="text-xl font-bold mb-2">{post.title}</h3>
-                      <p className="text-gray-500 mb-4">
+                      <p className="text-gray-700 mb-4">
                         {post.excerpt || "No excerpt provided."}
                       </p>
                       <Link
@@ -168,7 +168,7 @@ export default async function Home() {
           ) : (
             <div className="flex flex-col items-center justify-center mt-12 p-12 border border-gray-200 rounded-lg">
               <h3 className="text-2xl font-bold text-[#27c6d9]">Coming Soon!</h3>
-              <p className="text-gray-500 mt-4 text-center max-w-[600px]">
+              <p className="text-gray-700 mt-4 text-center max-w-[600px]">
                 We&apos;re working on exciting content to share with you. Check back soon for articles about Networking, Security, and AI.
               </p>
             </div>

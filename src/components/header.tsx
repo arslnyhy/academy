@@ -77,13 +77,13 @@ export default function Header() {
         </nav>
         <div className="hidden md:flex items-center gap-6">
           <div className="flex gap-4">
-            <Link href="https://github.com/orgs/arsalan-academy/repositories" className="text-gray-600 hover:text-[#27c6d9] transition-colors" target="_blank">
+            <Link href="https://github.com/orgs/arsalan-academy/repositories" className="text-gray-600 hover:text-[#27c6d9] transition-colors" target="_blank" title="Visit GitHub repositories">
               <Github className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
+              <span className="sr-only">Visit GitHub repositories</span>
             </Link>
-            <Link href="https://discord.gg/5mApWhSE" className="text-gray-600 hover:text-[#27c6d9] transition-colors" target="_blank">
+            <Link href="https://discord.gg/5mApWhSE" className="text-gray-600 hover:text-[#27c6d9] transition-colors" target="_blank" title="Join Discord community">
               <DiscordIcon className="h-5 w-5" />
-              <span className="sr-only">Discord</span>
+              <span className="sr-only">Join Discord community</span>
             </Link>
           </div>
           <Button asChild className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black">
@@ -146,18 +146,20 @@ export default function Header() {
                 target="_blank"
                 className="text-gray-600 hover:text-[#27c6d9] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
+                title="Visit Arsalan Academy GitHub repositories"
               >
                 <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
+                <span className="sr-only">Visit Arsalan Academy GitHub repositories</span>
               </Link>
               <Link
                 href="https://discord.gg/5mApWhSE"
                 target="_blank"
                 className="text-gray-600 hover:text-[#27c6d9] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
+                title="Join Arsalan Academy Discord community"
               >
                 <DiscordIcon className="h-5 w-5" />
-                <span className="sr-only">Discord</span>
+                <span className="sr-only">Join Arsalan Academy Discord community</span>
               </Link>
             </div>
             <Button asChild className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black w-full mt-2">

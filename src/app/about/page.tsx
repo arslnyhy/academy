@@ -26,18 +26,18 @@ export default function AboutPage() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter">Our Story</h2>
-              <p className="text-gray-500 text-lg leading-relaxed">
+              <p className="text-gray-700 text-lg leading-relaxed">
               Founded by Arsalan Yahyazadeh, our IT education and training academy is dedicated to bridging 
               the gap between complex technologies and practical implementation. We specialize in Networking, 
               Security, and Machine Learning, providing hands-on training that transforms theoretical knowledge 
               into real-world expertise.
               </p>
-              <p className="text-gray-500 text-lg leading-relaxed">
+              <p className="text-gray-700 text-lg leading-relaxed">
               We understand that education is not just about learning—it&apos;s about transformation. Our approach 
               combines theoretical foundations with practical applications, enabling professionals to adapt to 
               rapidly evolving technologies while building robust, scalable solutions.
               </p>
-              <p className="text-gray-500 text-lg leading-relaxed">
+              <p className="text-gray-700 text-lg leading-relaxed">
                 Today, we continue to evolve our curriculum and teaching methodologies, staying at the forefront 
                 of technological advancements to provide our students with cutting-edge knowledge and practical 
                 skills that drive their career growth and success.
@@ -62,7 +62,7 @@ export default function AboutPage() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter">Our Team</h2>
-              <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Meet the experts behind our network automation solutions.
               </p>
             </div>
@@ -78,7 +78,7 @@ export default function AboutPage() {
               />
               <h3 className="text-xl font-bold">John Smith</h3>
               <p className="text-[#27c6d9] font-medium">CEO & Founder</p>
-              <p className="text-gray-500 text-center">Network engineering expert with over 15 years of experience.</p>
+              <p className="text-gray-700 text-center">Network engineering expert with over 15 years of experience.</p>
             </div>
             <div className="flex flex-col items-center space-y-2">
               <Image
@@ -90,7 +90,7 @@ export default function AboutPage() {
               />
               <h3 className="text-xl font-bold">Sarah Johnson</h3>
               <p className="text-[#27c6d9] font-medium">CTO</p>
-              <p className="text-gray-500 text-center">
+              <p className="text-gray-700 text-center">
                 Automation specialist with a background in software development.
               </p>
             </div>
@@ -104,7 +104,7 @@ export default function AboutPage() {
               />
               <h3 className="text-xl font-bold">Michael Chen</h3>
               <p className="text-[#27c6d9] font-medium">Lead Engineer</p>
-              <p className="text-gray-500 text-center">Expert in network security and infrastructure automation.</p>
+              <p className="text-gray-700 text-center">Expert in network security and infrastructure automation.</p>
             </div>
             <div className="flex flex-col items-center space-y-2">
               <Image
@@ -116,7 +116,7 @@ export default function AboutPage() {
               />
               <h3 className="text-xl font-bold">Emily Rodriguez</h3>
               <p className="text-[#27c6d9] font-medium">Client Success Manager</p>
-              <p className="text-gray-500 text-center">
+              <p className="text-gray-700 text-center">
                 Dedicated to ensuring our clients achieve their automation goals.
               </p>
             </div>

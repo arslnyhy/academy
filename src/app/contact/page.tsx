@@ -33,7 +33,7 @@ export default function ContactPage() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter">Get in Touch</h2>
-              <p className="text-gray-500">
+              <p className="text-gray-700">
                 Send us a message and we&apos;ll get back to you as soon as possible.
               </p>
               <div className="space-y-4 pt-4">
@@ -41,7 +41,7 @@ export default function ContactPage() {
                   <Mail className="h-6 w-6 text-[#27c6d9] mt-0.5" />
                   <div>
                     <h3 className="font-bold">Email</h3>
-                    <p className="text-gray-500">info@arsalan-academy.com</p>
+                    <p className="text-gray-700">info@arsalan-academy.com</p>
                   </div>
                 </div>
               </div>
