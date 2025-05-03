@@ -114,7 +114,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 text-[#27c6d9]" />
-                <span className="text-gray-400">email.com</span>
+                <span className="text-gray-400">info@arsalan-academy.com</span>
               </li>
             </ul>
             <div className="mt-6 space-y-3">

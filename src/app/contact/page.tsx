@@ -9,17 +9,6 @@ import { Mail } from "lucide-react"
 export default function ContactPage() {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_ID!);
 
-  if (state.succeeded) {
-    return (
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-md mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
-          <p className="text-gray-600">Your message has been sent successfully. We&apos;ll get back to you soon.</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -52,60 +41,67 @@ export default function ContactPage() {
                   <Mail className="h-6 w-6 text-[#27c6d9] mt-0.5" />
                   <div>
                     <h3 className="font-bold">Email</h3>
-                    <p className="text-gray-500">email.com</p>
+                    <p className="text-gray-500">info@arsalan-academy.com</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="space-y-4">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <Input
-                    id="email"
-                    type="email" 
-                    name="email"
-                    placeholder="your@email.com"
-                    required
-                    className="w-full"
-                  />
-                  <ValidationError 
-                    prefix="Email" 
-                    field="email"
-                    errors={state.errors}
-                    className="mt-1 text-sm text-red-600"
-                  />
+              {state.succeeded ? (
+                <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+                  <h3 className="text-2xl font-bold text-green-800 mb-2">Thank You!</h3>
+                  <p className="text-green-700">Your message has been sent successfully. We&apos;ll get back to you soon.</p>
                 </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address
+                    </label>
+                    <Input
+                      id="email"
+                      type="email" 
+                      name="email"
+                      placeholder="your@email.com"
+                      required
+                      className="w-full"
+                    />
+                    <ValidationError 
+                      prefix="Email" 
+                      field="email"
+                      errors={state.errors}
+                      className="mt-1 text-sm text-red-600"
+                    />
+                  </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="How can we help you?"
-                    required
-                    className="w-full min-h-[150px]"
-                  />
-                  <ValidationError 
-                    prefix="Message" 
-                    field="message"
-                    errors={state.errors}
-                    className="mt-1 text-sm text-red-600"
-                  />
-                </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      Message
+                    </label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="How can we help you?"
+                      required
+                      className="w-full min-h-[150px]"
+                    />
+                    <ValidationError 
+                      prefix="Message" 
+                      field="message"
+                      errors={state.errors}
+                      className="mt-1 text-sm text-red-600"
+                    />
+                  </div>
 
-                <Button
-                  type="submit"
-                  disabled={state.submitting}
-                  className="w-full bg-[#27c6d9] hover:bg-[#1ea8b9] text-black"
-                >
-                  {state.submitting ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
+                  <Button
+                    type="submit"
+                    disabled={state.submitting}
+                    className="w-full bg-[#27c6d9] hover:bg-[#1ea8b9] text-black"
+                  >
+                    {state.submitting ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
+              )}
             </div>
           </div>
         </div>
