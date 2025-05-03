@@ -1,28 +1,58 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft, Calendar, Share2, Facebook, Twitter, Linkedin, User } from "lucide-react"
+import { ArrowLeft, Calendar, User } from "lucide-react"
 import { getPostBySlug } from "@/lib/posts"
 import { notFound } from "next/navigation"
 import { Metadata } from 'next'
-// import { format } from 'date-fns'
 import Markdown from 'markdown-to-jsx'
+import { ShareButtons } from "@/components/ShareButtons"
 
 export type ParamsType = Promise<{ slug: string }>;
 
 export async function generateMetadata({ params }: { params: ParamsType }): Promise<Metadata> {
   const resolvedParams = await params;
   const post = await getPostBySlug(resolvedParams.slug);
-  
+
   if (!post) {
     return {
       title: 'Post Not Found'
     }
   }
-  
+
+  // Use the environment variable for the base URL, falling back to the production domain
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://arsalanacademy.com';
+  const postUrl = `${baseUrl}/blogs/${post.slug}`;
+  const imageUrl = post.cover_image_url || `${baseUrl}/placeholder.svg`; // Use cover image or a default placeholder
+
   return {
     title: post.title,
     description: post.excerpt || undefined,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt || '',
+      url: postUrl,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200, // Recommended OG image width
+          height: 630, // Recommended OG image height
+          alt: post.title,
+        },
+      ],
+      type: 'article', // Specify content type as article
+      publishedTime: post.published_at || undefined, // Add published time if available
+      // Optional: Add author if you have that info easily available
+      // authors: [post.instructors?.name || 'Arsalan Academy'],
+    },
+    // Add Twitter card metadata for better previews on Twitter
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt || '',
+      images: [imageUrl],
+      // Optional: Add Twitter site handle if you have one
+      // site: '@YourTwitterHandle',
+    },
   }
 }
 
@@ -115,20 +145,7 @@ export default async function BlogPostPage({ params }: { params: ParamsType }) {
           <footer className="mt-12 pt-8 border-t border-gray-200">
             <div className="flex items-center justify-between">
               <span className="text-sm text-gray-500">Share this post:</span>
-              <div className="flex items-center gap-2">
-                <Button variant="outline" size="icon" className="border-[#27c6d9] hover:bg-[#27c6d9]/10">
-                  <Share2 className="h-4 w-4" />
-                </Button>
-                <Button variant="outline" size="icon" className="border-[#27c6d9] hover:bg-[#27c6d9]/10">
-                  <Facebook className="h-4 w-4" />
-                </Button>
-                <Button variant="outline" size="icon" className="border-[#27c6d9] hover:bg-[#27c6d9]/10">
-                  <Twitter className="h-4 w-4" />
-                </Button>
-                <Button variant="outline" size="icon" className="border-[#27c6d9] hover:bg-[#27c6d9]/10">
-                  <Linkedin className="h-4 w-4" />
-                </Button>
-              </div>
+              <ShareButtons slug={slug} title={post.title} />
             </div>
           </footer>
         </div>
