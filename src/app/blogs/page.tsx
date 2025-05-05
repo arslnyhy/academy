@@ -5,8 +5,27 @@ import { Calendar, ArrowRight } from "lucide-react"
 // import { Input } from "@/components/ui/input"
 import { getPublishedPosts } from "@/lib/posts"
 
-export default async function BlogsPage() {
-  const posts = await getPublishedPosts()
+interface BlogsPageProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function BlogsPage({ searchParams }: BlogsPageProps) {
+  const allPosts = await getPublishedPosts()
+  const searchParamsData = await searchParams;
+
+  const postsPerPage = 6; // Or any number you prefer
+  const currentPage = Number(searchParamsData?.page) || 1;
+  const totalPages = Math.ceil(allPosts.length / postsPerPage);
+
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const endIndex = startIndex + postsPerPage;
+  const currentPosts = allPosts.slice(startIndex, endIndex);
+
+  // Helper function to generate page URLs
+  const getPageUrl = (page: number) => {
+    if (page < 1 || page > totalPages) return '#'; // Prevent invalid links
+    return `/blogs?page=${page}`;
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -29,9 +48,9 @@ export default async function BlogsPage() {
       {/* Blog Posts */}
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
-          {posts && posts.length > 0 ? (
+          {currentPosts && currentPosts.length > 0 ? (
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {posts.map((post) => (
+              {currentPosts.map((post) => (
                 <div key={post.id} className="group flex flex-col border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="relative">
                     <Image
@@ -77,41 +96,67 @@ export default async function BlogsPage() {
             </div>
           )}
 
-          {/* Pagination Template (preserved for future use) */}
-          <div className="flex justify-center items-center gap-2 mt-12">
-            <Button
-              variant="outline"
-              className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10 hover:text-[#27c6d9] disabled:border-gray-300 disabled:text-gray-400"
-              disabled
-            >
-              Previous
-            </Button>
-            <div className="flex gap-1">
-              <Button
-                className="bg-[#27c6d9] hover:bg-[#1ea8b9] text-black"
-              >
-                1
-              </Button>
-              <Button
-                variant="outline"
-                className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10 hover:text-[#27c6d9]"
-              >
-                2
-              </Button>
-              <Button
-                variant="outline"
-                className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10 hover:text-[#27c6d9]"
-              >
-                3
-              </Button>
+          {/* Dynamic Pagination */}
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center gap-4 mt-12">
+              {currentPage <= 1 ? (
+                <Button
+                  variant="outline"
+                  className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10 hover:text-[#27c6d9] disabled:border-gray-300 disabled:text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={true}
+                >
+                  Previous
+                </Button>
+              ) : (
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10 hover:text-[#27c6d9] disabled:border-gray-300 disabled:text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none"
+                  disabled={currentPage <= 1} // This will be false here, but keep for consistency if needed
+                >
+                  <Link href={getPageUrl(currentPage - 1)}>Previous</Link>
+                </Button>
+              )}
+              
+              <div className="flex items-center gap-2 text-sm">
+                {/* Simple Page Indicator (can be enhanced) */}
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
+                  <Button
+                    key={pageNumber}
+                    asChild
+                    variant={currentPage === pageNumber ? "default" : "outline"}
+                    className={
+                      currentPage === pageNumber 
+                        ? "bg-[#27c6d9] hover:bg-[#1ea8b9] text-black"
+                        : "border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10 hover:text-[#27c6d9]"
+                    }
+                    size="icon" // Make buttons smaller
+                  >
+                    <Link href={getPageUrl(pageNumber)}>{pageNumber}</Link>
+                  </Button>
+                ))}
+              </div>
+
+              {currentPage >= totalPages ? (
+                 <Button
+                   variant="outline"
+                   className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10 hover:text-[#27c6d9] disabled:border-gray-300 disabled:text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                   disabled={true}
+                 >
+                  Next
+                 </Button>
+              ) : (
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10 hover:text-[#27c6d9] disabled:border-gray-300 disabled:text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none"
+                  disabled={currentPage >= totalPages} // This will be false here
+                >
+                   <Link href={getPageUrl(currentPage + 1)}>Next</Link>
+                </Button>
+              )}
             </div>
-            <Button
-              variant="outline"
-              className="border-[#27c6d9] text-[#27c6d9] hover:bg-[#27c6d9]/10 hover:text-[#27c6d9]"
-            >
-              Next
-            </Button>
-          </div>
+          )}
         </div>
       </section>
 
