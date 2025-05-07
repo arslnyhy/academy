@@ -1,17 +1,23 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.yourwebsite.com'; // Fallback, ensure this is set
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://arsalanacademy.com'; // Use a more appropriate default domain
 
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        // Add disallow rules here if you have specific paths to block
-        // e.g., disallow: '/admin/',
+        disallow: [
+          '/api/',
+          '/admin/',
+          '/_next/',
+          '/server-sitemap.xml',
+          // Add other private or utility paths that should not be indexed
+        ],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   };
 } 

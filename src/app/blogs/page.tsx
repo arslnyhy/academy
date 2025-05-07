@@ -4,6 +4,20 @@ import { Button } from "@/components/ui/button"
 import { Calendar, ArrowRight } from "lucide-react"
 // import { Input } from "@/components/ui/input"
 import { getPublishedPosts } from "@/lib/posts"
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Blog | Arsalan Academy',
+  description: 'Read the latest insights and articles about network automation, security, and IT training from Arsalan Academy.',
+  alternates: {
+    canonical: '/blogs'
+  },
+  openGraph: {
+    title: 'Blog | Arsalan Academy',
+    description: 'Stay updated with the latest trends and insights in the IT industry.',
+    url: '/blogs',
+  }
+}
 
 interface BlogsPageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -55,7 +69,7 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                   <div className="relative">
                     <Image
                       src={post.cover_image_url || "/placeholder.svg?height=250&width=500"}
-                      alt={post.title}
+                      alt={post.title || "Blog post featured image"}
                       width={500}
                       height={250}
                       className="w-full h-48 object-cover transition-transform group-hover:scale-105"
@@ -73,13 +87,14 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                         <span>{post.instructors?.name || 'Anonymous'}</span>
                       </div> */}
                     </div>
-                    <h3 className="text-xl font-bold mb-2">{post.title}</h3>
+                    <h2 className="text-xl font-bold mb-2">{post.title}</h2>
                     <p className="text-gray-700 mb-4">
                       {post.excerpt || "No excerpt provided."}
                     </p>
                     <Link
                       href={`/blogs/${post.slug}`}
                       className="inline-flex items-center text-[#27c6d9] hover:underline mt-auto"
+                      aria-label={`Read more about ${post.title}`}
                     >
                       Read More <ArrowRight className="ml-1 h-4 w-4" />
                     </Link>

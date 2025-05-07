@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Arsalan Academy",
-  description: "Professional network automation training and consultancy",
+  description: "Professional IT training and solutions",
   icons: {
     icon: [
       {

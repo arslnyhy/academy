@@ -2,6 +2,28 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Server, Network, Wrench } from "lucide-react"
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Services | Arsalan Academy',
+  description: 'Comprehensive IT training programs and solutions including technical training, product training, and custom solution development.',
+  alternates: {
+    canonical: '/services'
+  },
+  openGraph: {
+    title: 'Services | Arsalan Academy',
+    description: 'Comprehensive training programs and solutions on foundational and hot industry topics.',
+    url: '/services',
+    images: [
+      {
+        url: '/technical.png',
+        width: 600,
+        height: 400,
+        alt: 'Arsalan Academy Services',
+      },
+    ],
+  }
+}
 
 export default function ServicesPage() {
   return (
@@ -71,7 +93,7 @@ export default function ServicesPage() {
               <div className="flex justify-center">
                 <Image
                   src="/technical.png?height=400&width=600"
-                  alt="Technical Training"
+                  alt="Technical Training at Arsalan Academy"
                   width={600}
                   height={400}
                   className="rounded-lg object-cover"
@@ -86,7 +108,7 @@ export default function ServicesPage() {
               <div className="flex justify-center lg:order-last">
                 <Image
                   src="/product.png?height=400&width=600"
-                  alt="Product Training"
+                  alt="Product Training and workshops by Arsalan Academy"
                   width={600}
                   height={400}
                   className="rounded-lg object-cover"
@@ -175,7 +197,7 @@ export default function ServicesPage() {
               <div className="flex justify-center">
                 <Image
                   src="/solution.png?height=400&width=600"
-                  alt="Solution Development"
+                  alt="Custom solution development services by Arsalan Academy"
                   width={600}
                   height={400}
                   className="rounded-lg object-cover"

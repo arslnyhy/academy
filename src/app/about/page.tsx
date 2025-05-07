@@ -1,4 +1,26 @@
 import Image from "next/image"
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About Arsalan Academy',
+  description: 'Learn about our mission, vision, and the team behind Arsalan Academy.',
+  alternates: {
+    canonical: '/about'
+  },
+  openGraph: {
+    title: 'About Arsalan Academy',
+    description: 'We are a team of IT education and training experts dedicated to helping individuals and teams optimize their operations.',
+    url: '/about',
+    images: [
+      {
+        url: '/about.png',
+        width: 600,
+        height: 600,
+        alt: 'About Arsalan Academy',
+      },
+    ],
+  }
+}
 
 export default function AboutPage() {
   return (
@@ -46,7 +68,7 @@ export default function AboutPage() {
             <div className="flex justify-center">
               <Image
                 src="/about.png?height=600&width=600"
-                alt="Our Story"
+                alt="Arsalan Academy team working together on IT solutions"
                 width={600}
                 height={600}
                 className="rounded-lg object-cover"
