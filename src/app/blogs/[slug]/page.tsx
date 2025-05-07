@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, Calendar, User } from "lucide-react"
+import { ArrowLeft, User } from "lucide-react"
 import { getPostBySlug } from "@/lib/posts"
 import { notFound } from "next/navigation"
 import { Metadata } from 'next'
@@ -141,10 +141,10 @@ export default async function BlogPostPage({ params }: { params: ParamsType }) {
                   )}
                   <span className="font-medium">{post.instructors?.name || 'Anonymous'}</span>
                 </div>
-                <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                   <Calendar className="h-5 w-5 text-[#27c6d9]" />
                   <span>{post.published_at ? new Date(post.published_at).toLocaleDateString() : 'N/A'}</span>
-                </div>
+                </div> */}
               </div>
             </header>
 

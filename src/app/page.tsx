@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Server, Network, Wrench, Calendar } from "lucide-react"
+import { ArrowRight, Server, Network, Wrench } from "lucide-react"
 import { getPublishedPosts } from "@/lib/posts"
 import { Metadata } from 'next'
 import Script from 'next/script'
@@ -166,10 +166,10 @@ export default async function Home() {
                       </div>
                       <div className="flex-1 p-6">
                         <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                          <div className="flex items-center gap-2">
+                          {/* <div className="flex items-center gap-2">
                             <Calendar className="h-4 w-4 text-[#27c6d9]" />
                             <span>{post.published_at ? new Date(post.published_at).toLocaleDateString() : 'Date N/A'}</span>
-                          </div>
+                          </div> */}
                         </div>
                         <h3 className="text-xl font-bold mb-2">{post.title}</h3>
                         <p className="text-gray-700 mb-4">
