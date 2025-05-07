@@ -3,8 +3,8 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Linkedin, Twitter } from "lucide-react"
-import { DiscordIcon } from "@/components/icons/discord"
-import { useState, useEffect } from 'react'; // Import useState and useEffect
+// import { DiscordIcon } from "@/components/icons/discord" // Comment out DiscordIcon import
+import { useState, useEffect } from 'react';
 
 interface ShareButtonsProps {
   slug: string;
@@ -12,29 +12,37 @@ interface ShareButtonsProps {
 }
 
 export function ShareButtons({ slug, title }: ShareButtonsProps) {
-  // State to hold the calculated URLs
   const [shareUrls, setShareUrls] = useState({
     linkedIn: '#',
-    twitter: '#',
-    discord: '#'
+    twitter: '#'
   });
+  // const [copied, setCopied] = useState(false); // Comment out copied state
+  // const [postUrl, setPostUrl] = useState(''); // Comment out postUrl state
 
   useEffect(() => {
-    // This effect runs only *after* the component mounts on the client-side
-    // where 'window' is available.
-    const postUrl = `${window.location.origin}/blogs/${slug}`;
+    // Use the environment variable for the base URL, falling back to the production domain
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://arsalanacademy.com';
+    const url = `${baseUrl}/blogs/${slug}`;
+    // setPostUrl(url); // Comment out setPostUrl
     
     // Generate share URLs for different platforms
     const urls = {
-      linkedIn: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(postUrl)}&title=${encodeURIComponent(title)}`,
-      twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(title)}`,
-      discord: `https://discord.com/channels/@me?message=${encodeURIComponent(`Check out this article: ${title} ${postUrl}`)}`
+      linkedIn: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`,
+      twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`
     };
     
-    // Update the state with the client-side generated URLs
     setShareUrls(urls);
+  }, [slug, title]);
 
-  }, [slug, title]); // Dependencies: re-run effect if slug or title props change
+  // const copyToClipboard = async () => { // Comment out copyToClipboard function
+  //   try {
+  //     // await navigator.clipboard.writeText(`${title}\n${postUrl}`); // Comment out usage of postUrl
+  //     // setCopied(true); // Comment out usage of copied state
+  //     // setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+  //   } catch (err) {
+  //     // console.error('Failed to copy:', err);
+  //   }
+  // };
 
   return (
     <div className="flex items-center gap-2">
@@ -62,17 +70,21 @@ export function ShareButtons({ slug, title }: ShareButtonsProps) {
         </Button>
       </Link>
 
-      {/* Discord Share Button */}
-      <Link href={shareUrls.discord} target="_blank" rel="noopener noreferrer">
-        <Button 
-          variant="outline" 
-          size="icon" 
-          className="border-[#27c6d9] hover:bg-[#27c6d9]/10" 
-          aria-label="Share on Discord"
-        >
+      {/* Discord Copy Button */}
+      {/* <Button 
+        variant="outline" 
+        size="icon" 
+        className="border-[#27c6d9] hover:bg-[#27c6d9]/10" 
+        // onClick={copyToClipboard} // Comment out onClick handler
+        aria-label="Copy link for Discord"
+        title="Copy link to share on Discord"
+      >
+        {/* {copied ? ( // Comment out conditional rendering
+          <Check className="h-4 w-4 text-green-500" /> // Check import was removed
+        ) : (
           <DiscordIcon className="h-4 w-4" />
-        </Button>
-      </Link>
+        )} *//*}
+      </Button> */}
     </div>
   );
 }
