@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, User } from "lucide-react"
-import { getPostBySlug } from "@/lib/posts"
+import { ArrowLeft, User, ArrowRight } from "lucide-react"
+import { getPostBySlug, getRandomPosts, PostWithAuthor } from "@/lib/posts"
 import { notFound } from "next/navigation"
 import { Metadata } from 'next'
 import Markdown from 'markdown-to-jsx'
@@ -63,6 +63,10 @@ export default async function BlogPostPage({ params }: { params: ParamsType }) {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
   const post = await getPostBySlug(slug);
+  let randomPosts: PostWithAuthor[] = []; // Initialize as empty array
+  if (post) { // Only fetch random posts if current post exists
+    randomPosts = await getRandomPosts(slug, 3);
+  }
 
   if (!post) {
     notFound();
@@ -188,11 +192,49 @@ export default async function BlogPostPage({ params }: { params: ParamsType }) {
               )}
             </div>
 
-            <footer className="mt-12 pt-8 border-t border-gray-200">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-700">Share this post:</span>
+            <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex items-center justify-between mb-12">
+                <span className="text-sm text-gray-700 dark:text-gray-400">Share this post:</span>
                 <ShareButtons slug={slug} title={post.title} />
               </div>
+
+              {/* Random Posts Section */}
+              {Array.isArray(randomPosts) && randomPosts.length > 0 && (
+                <section className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                  <h2 className="text-2xl font-bold mb-8 text-gray-900 dark:text-gray-100">You Might Also Like</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {randomPosts.map((randomPost) => (
+                      <Link
+                        key={randomPost.id}
+                        href={`/blogs/${randomPost.slug}`}
+                        className="group flex flex-col border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:shadow-xl dark:hover:border-[#27c6d9]/70 transition-all duration-300"
+                      >
+                        <div className="relative aspect-[2/1]">
+                          <Image
+                            src={randomPost.cover_image_url || "/placeholder.svg?height=250&width=500"}
+                            alt={randomPost.title || "Blog post featured image"}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            className="object-cover transition-transform group-hover:scale-105 duration-300"
+                          />
+                          <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300"></div>
+                        </div>
+                        <div className="flex-1 p-5 bg-white dark:bg-gray-800">
+                          <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100 group-hover:text-[#27c6d9] transition-colors duration-300 line-clamp-2">
+                            {randomPost.title}
+                          </h3>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+                            {randomPost.excerpt || "No excerpt provided."}
+                          </p>
+                          <span className="inline-flex items-center text-sm font-medium text-[#27c6d9] group-hover:underline mt-auto">
+                            Read More <ArrowRight className="ml-1 h-4 w-4" />
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
             </footer>
           </div>
         </article>

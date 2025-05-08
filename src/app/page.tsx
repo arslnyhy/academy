@@ -26,7 +26,7 @@ export default async function Home() {
           "name": "Arsalan Academy",
           "url": process.env.NEXT_PUBLIC_BASE_URL || "https://arsalanacademy.com",
           "logo": `${process.env.NEXT_PUBLIC_BASE_URL || "https://arsalanacademy.com"}/favicon.png`,
-          "description": "Professional network automation training and consultancy",
+          "description": "Professional IT training and solutions",
           "sameAs": [
             "https://linkedin.com/company/arsalanacademy",
             // Add other social profiles
@@ -58,7 +58,7 @@ export default async function Home() {
               <div className="flex justify-center">
                 <Image
                   src="/main.png?height=800&width=1200"
-                  alt="IT professionals learning network automation at Arsalan Academy"
+                  alt="IT professionals learning at Arsalan Academy"
                   width={1200}
                   height={800}
                   priority

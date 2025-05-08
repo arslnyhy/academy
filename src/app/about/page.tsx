@@ -85,7 +85,7 @@ export default function AboutPage() {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter">Our Team</h2>
               <p className="max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Meet the experts behind our network automation solutions.
+                Meet the experts behind our IT training.
               </p>
             </div>
           </div>

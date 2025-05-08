@@ -1,14 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Calendar, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 // import { Input } from "@/components/ui/input"
 import { getPublishedPosts } from "@/lib/posts"
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Blog | Arsalan Academy',
-  description: 'Read the latest insights and articles about network automation, security, and IT training from Arsalan Academy.',
+  description: 'Read the latest insights and articles about Networking, Security, and Machine Learning from Arsalan Academy.',
   alternates: {
     canonical: '/blogs'
   },
@@ -78,10 +78,10 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                   </div>
                   <div className="flex-1 p-6">
                     <div className="flex items-center gap-4 text-sm text-gray-700 mb-3">
-                      <div className="flex items-center gap-2">
+                      {/* <div className="flex items-center gap-2">
                         <Calendar className="h-4 w-4 text-[#27c6d9]" />
                         <span>{post.published_at ? new Date(post.published_at).toLocaleDateString() : 'Date N/A'}</span>
-                      </div>
+                      </div> */}
                       {/* <div className="flex items-center gap-2">
                         <User className="h-4 w-4 text-[#27c6d9]" />
                         <span>{post.instructors?.name || 'Anonymous'}</span>
@@ -182,7 +182,7 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter">Subscribe to Our Newsletter</h2>
               <p className="max-w-[700px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Stay updated with the latest trends and insights in network automation.
+                Stay updated with the latest trends and insights.
               </p>
             </div>
             <div className="w-full max-w-md space-y-2">
